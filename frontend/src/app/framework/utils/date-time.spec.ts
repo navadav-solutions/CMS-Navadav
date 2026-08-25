@@ -237,7 +237,7 @@ describe('DateTime', () => {
         });
 
         it('should format to string', () => {
-            const value = DateTime.parseISO('2020-07-23');
+            const value = DateTime.parseISO('2020-07-23T12:00:00Z');
             const expected = 'donderdag 23 juli 2020';
 
             expect(value.toStringFormat('PPPP')).toBe(expected);
@@ -268,7 +268,7 @@ describe('DateTime', () => {
         });
 
         it('should format to string', () => {
-            const value = DateTime.parseISO('2020-07-23');
+            const value = DateTime.parseISO('2020-07-23T12:00:00Z');
             const expected = 'giovedì 23 luglio 2020';
 
             expect(value.toStringFormat('PPPP')).toBe(expected);
