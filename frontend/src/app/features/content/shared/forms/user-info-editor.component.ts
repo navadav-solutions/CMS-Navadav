@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -57,8 +57,8 @@ export class UserInfoEditorComponent extends StatefulControlComponent<any, UserI
     });
 
     public readonly apiKey =
-      value$(this.form.get('apiKey')!)
-        .pipe(map(x => x || 'NONE'));
+        value$(this.form.get('apiKey')!)
+            .pipe(map(x => x || 'NONE'));
 
     constructor(
         public readonly rolesState: RolesState,

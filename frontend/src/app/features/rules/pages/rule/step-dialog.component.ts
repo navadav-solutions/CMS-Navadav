@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe, LowerCasePipe } from '@angular/common';
@@ -102,7 +102,7 @@ export class StepDialogComponent {
 
         this.rulesService.validateStep(this.appsState.appName, values)
             .subscribe({
-                error: error =>{
+                error: error => {
                     this.currentStep?.submitFailed(error);
                 },
                 complete: () => {

@@ -1,11 +1,11 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
-import { CdkTrapFocus  } from '@angular/cdk/a11y';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
 import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Component({
@@ -18,7 +18,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input } fr
         ['animate.leave']: 'fade-out',
     },
     hostDirectives: [
-        CdkTrapFocus ,
+        CdkTrapFocus,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

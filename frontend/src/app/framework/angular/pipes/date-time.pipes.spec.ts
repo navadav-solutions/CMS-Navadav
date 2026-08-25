@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { DateHelper, DateTime, Duration } from '@app/framework/internal';
@@ -13,12 +13,12 @@ const dateTime = DateTime.parseISO(dateSource, false);
 const dateString = dateTime.toISOString();
 
 const TestCases = [{
-        value: dateString,
-        name: 'String',
-    }, {
-        value: dateTime,
-        name: 'DateTime',
-    }];
+    value: dateString,
+    name: 'String',
+}, {
+    value: dateTime,
+    name: 'DateTime',
+}];
 
 describe('DurationPipe', () => {
     beforeEach(() => {

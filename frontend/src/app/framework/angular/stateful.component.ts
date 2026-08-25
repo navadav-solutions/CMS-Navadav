@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { ChangeDetectorRef, Directive, inject, OnDestroy } from '@angular/core';
@@ -23,7 +23,7 @@ export abstract class StatefulComponent<T extends {} = object> extends State<T> 
                 try {
                     this.changeDetector.detectChanges();
                 } catch {
-                  /* NOOP */
+                    /* NOOP */
                 }
             });
     }

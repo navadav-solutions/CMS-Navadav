@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable @angular-eslint/no-input-rename */
@@ -65,7 +65,7 @@ export class ContentsColumnsPipe implements PipeTransform {
 @Directive({
     selector: '[sqxContentListWidth]',
 })
-export class ContentListWidthDirective  {
+export class ContentListWidthDirective {
     private readonly subscriptions = new Subscriptions();
     private sizes?: FieldSizes;
     private size = -1;
@@ -118,7 +118,7 @@ export class ContentListWidthDirective  {
 @Directive({
     selector: '[sqxContentListCell]',
 })
-export class ContentListCellDirective  {
+export class ContentListCellDirective {
     private readonly subscriptions = new Subscriptions();
     private sizes?: FieldSizes;
     private size = -1;

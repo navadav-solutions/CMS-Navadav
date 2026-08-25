@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { booleanAttribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, numberAttribute, OnInit, Renderer2 } from '@angular/core';
@@ -19,7 +19,7 @@ import { TypedSimpleChanges } from '@app/framework/internal';
     template: '',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProgressBarComponent implements  OnInit {
+export class ProgressBarComponent implements OnInit {
     private progressBar: any;
 
     @Input()

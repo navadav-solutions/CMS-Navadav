@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 
@@ -41,8 +41,8 @@ export class ContentEventComponent {
     public ngOnChanges(changes: TypedSimpleChanges<this>) {
         if (changes.event) {
             this.canLoadOrCompare =
-               (this.event.eventType === 'ContentUpdatedEvent' ||
-                this.event.eventType === 'ContentCreatedEventV2') &&
+                (this.event.eventType === 'ContentUpdatedEvent' ||
+                    this.event.eventType === 'ContentCreatedEventV2') &&
                 this.event.version !== this.content.version;
         }
     }

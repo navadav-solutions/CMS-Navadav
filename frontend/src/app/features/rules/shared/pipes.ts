@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Pipe, PipeTransform } from '@angular/core';
@@ -20,7 +20,7 @@ export class RuleClassPipe implements PipeTransform {
             return 'danger';
         } else if (value === 'Pending' || value === 'Scheduled') {
             return 'secondary';
-        } else  if (value === 'Completed') {
+        } else if (value === 'Completed') {
             return 'success';
         } else {
             return value?.toLowerCase() || 'secondary';

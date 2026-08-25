@@ -4,11 +4,7 @@
             @if (appsState.selectedApp | async; as app) {
                 {{ app.displayName }}
             } @else {
-                @if (teamsState.selectedTeam | async; as team) {
-                    {{ team.name }}
-                } @else {
-                    {{ "apps.appsButtonFallbackTitle" | sqxTranslate }}
-                }
+                {{ "apps.appsButtonFallbackTitle" | sqxTranslate }}
             }
         </span>
         <sqx-dropdown-menu
@@ -36,27 +32,7 @@
                 }
             }
 
-            @if (teamsState.teams | async; as teams) {
-                @if (teams.length > 0) {
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item dropdown-header" routerLink="/app">
-                        <div class="row g-0 align-items-center">
-                            <div class="col">{{ "apps.allTeams" | sqxTranslate }}</div>
-
-                            <div class="col-auto">
-                                <span class="badge badge-primary rounded-pill">{{ teams.length }}</span>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="teams-list">
-                        @for (team of teams; track team.id) {
-                            <a class="dropdown-item" [routerLink]="['/app/teams', team.id]" routerLinkActive="active"> {{ team.name }} </a>
-                        }
-                    </div>
-                }
-            }
-
-            @if ((uiState.settings | async)?.canCreateApps || (uiState.settings | async)?.canCreateApps) {
+            @if ((uiState.settings | async)?.canCreateApps) {
                 <div class="dropdown-divider"></div>
 
                 <div class="dropdown-header">
@@ -64,14 +40,6 @@
                         <i class="icon-plus"></i> {{ "apps.appsButtonCreate" | sqxTranslate }}
                     </button>
                 </div>
-
-                @if ((uiState.settings | async)?.canCreateTeams) {
-                    <div class="dropdown-header">
-                        <button class="btn btn-block btn-sm btn-text-success" (click)="addTeamDialog.show()" type="button">
-                            {{ "apps.appsButtonCreateTeam" | sqxTranslate }}
-                        </button>
-                    </div>
-                }
             }
         </sqx-dropdown-menu>
     </li>
@@ -96,5 +64,3 @@
 @if (starters | async; as templates) {
     <sqx-app-form (dialogClose)="addAppDialog.hide()" *sqxModal="addAppDialog" [templates]="templates" />
 }
-
-<sqx-team-form (dialogClose)="addTeamDialog.hide()" *sqxModal="addTeamDialog" />

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 export * from '@app/framework';
@@ -24,15 +24,12 @@ export * from './services/indexes.service';
 export * from './services/jobs.service';
 export * from './services/languages.service';
 export * from './services/news.service';
-export * from './services/plans.service';
 export * from './services/query';
 export * from './services/roles.service';
 export * from './services/rules.service';
 export * from './services/schemas.service';
 export * from './services/search.service';
 export * from './services/stock-photo.service';
-export * from './services/teams.service';
-export * from './services/templates.service';
 export * from './services/templates.service';
 export * from './services/translations.service';
 export * from './services/ui.service';
@@ -62,7 +59,6 @@ export * from './state/indexes.state';
 export * from './state/jobs.state';
 export * from './state/languages.forms';
 export * from './state/languages.state';
-export * from './state/plans.state';
 export * from './state/queries';
 export * from './state/resolvers';
 export * from './state/roles.forms';
@@ -76,8 +72,6 @@ export * from './state/schemas.forms';
 export * from './state/schemas.state';
 export * from './state/settings';
 export * from './state/table-settings';
-export * from './state/teams.forms';
-export * from './state/teams.state';
 export * from './state/templates.state';
 export * from './state/tour.state';
 export * from './state/tour.tasks';

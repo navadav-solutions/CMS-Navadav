@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
@@ -90,7 +90,7 @@ export class EditContentForm extends Form<ExtendedFormGroup, any> {
 
     constructor(
         public readonly languages: ReadonlyArray<AppLanguageDto>,
-        public readonly schema: SchemaDto, schemas: { [id: string ]: SchemaDto },
+        public readonly schema: SchemaDto, schemas: { [id: string]: SchemaDto },
         public context: any,
         debounce = 100,
     ) {

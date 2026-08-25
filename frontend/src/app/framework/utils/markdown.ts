@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { marked, Renderer, Tokens } from 'marked';
@@ -62,10 +62,10 @@ export function markdownRender(input: string | undefined | null, inline: boolean
 const ESCAPE_REPLACE_NO_ENCODE = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/g;
 
 const ESCAPE_REPLACEMENTS = {
-    '&' : '&amp;',
-    '<' : '&lt;',
-    '>' : '&gt;',
-    '"' : '&quot;',
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
     '\'': '&#39;',
 } as Record<string, string>;
 

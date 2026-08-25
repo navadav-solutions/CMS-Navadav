@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable @angular-eslint/no-input-rename */
@@ -198,7 +198,7 @@ export class ModalDirective<T = unknown> implements OnDestroy {
 }
 export class ModalContext<T = unknown> {
     public $implicit: T = null!;
-  }
+}
 
 
 function insertBefore(renderer: Renderer2, refElement: any, element: any) {

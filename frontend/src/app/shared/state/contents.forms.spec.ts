@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable @typescript-eslint/naming-convention */
@@ -58,8 +58,8 @@ describe('TranslationStatus', () => {
     it('should create content status for schema without localized field', () => {
         const schema = {
             fields: [{
-                    isLocalizable: false,
-                }],
+                isLocalizable: false,
+            }],
         } as any;
 
         const result = contentTranslationStatus({}, schema, languages as any);
@@ -74,8 +74,8 @@ describe('TranslationStatus', () => {
     it('should create content status for schema with localized field', () => {
         const schema = {
             fields: [{
-                    isLocalizable: true,
-                }],
+                isLocalizable: true,
+            }],
         } as any;
 
         const result = contentTranslationStatus({}, schema, languages as any);
@@ -90,14 +90,14 @@ describe('TranslationStatus', () => {
     it('should create content status for schema with mixed fields', () => {
         const schema = {
             fields: [{
-                    name: 'field1', isLocalizable: true,
-                }, {
-                    name: 'field2', isLocalizable: true,
-                }, {
-                    name: 'field3', isLocalizable: true,
-                }, {
-                    name: 'field4',
-                }],
+                name: 'field1', isLocalizable: true,
+            }, {
+                name: 'field2', isLocalizable: true,
+            }, {
+                name: 'field3', isLocalizable: true,
+            }, {
+                name: 'field4',
+            }],
         } as any;
 
         const data = {
@@ -126,14 +126,14 @@ describe('TranslationStatus', () => {
     it('should create contents status', () => {
         const schema = {
             fields: [{
-                    name: 'field1', isLocalizable: true,
-                }, {
-                    name: 'field2', isLocalizable: true,
-                }, {
-                    name: 'field3', isLocalizable: true,
-                }, {
-                    name: 'field4',
-                }],
+                name: 'field1', isLocalizable: true,
+            }, {
+                name: 'field2', isLocalizable: true,
+            }, {
+                name: 'field3', isLocalizable: true,
+            }, {
+                name: 'field4',
+            }],
         } as any;
 
         const data1 = {
@@ -472,7 +472,8 @@ describe('ContentForm', () => {
         }),
     ];
 
-    const complexSchema = createSchema({ fields: [
+    const complexSchema = createSchema({
+        fields: [
             createField({ id: 1, properties: createProperties('String'), partitioning: 'invariant' }),
             createField({ id: 2, properties: createProperties('String'), isDisabled: true }),
             createField({ id: 3, properties: createProperties('String', { isRequired: true }) }),
@@ -485,7 +486,8 @@ describe('ContentForm', () => {
                 ],
                 partitioning: 'invariant',
             }),
-        ] });
+        ]
+    });
 
     describe('should resolve partitions', () => {
         const partitions = new PartitionConfig(languages);
@@ -709,12 +711,12 @@ describe('ContentForm', () => {
             contentForm.load({
                 field4: {
                     iv: [{
-                            nested41: 120,
-                            nested42: 120,
-                        }, {
-                            nested41: 99,
-                            nested42: 99,
-                        }],
+                        nested41: 120,
+                        nested42: 120,
+                    }, {
+                        nested41: 99,
+                        nested42: 99,
+                    }],
                 },
             });
 
@@ -742,12 +744,12 @@ describe('ContentForm', () => {
             contentForm.load({
                 field4: {
                     iv: [{
-                            nested41: 120,
-                            nested42: 120,
-                        }, {
-                            nested41: 99,
-                            nested42: 99,
-                        }],
+                        nested41: 120,
+                        nested42: 120,
+                    }, {
+                        nested41: 99,
+                        nested42: 99,
+                    }],
                 },
             });
 
@@ -775,12 +777,12 @@ describe('ContentForm', () => {
             contentForm.load({
                 field4: {
                     en: [{
-                            nested41: 120,
-                            nested42: 120,
-                        }, {
-                            nested41: 99,
-                            nested42: 99,
-                        }],
+                        nested41: 120,
+                        nested42: 120,
+                    }, {
+                        nested41: 99,
+                        nested42: 99,
+                    }],
                 },
             });
 
@@ -815,12 +817,12 @@ describe('ContentForm', () => {
             contentForm.load({
                 field4: {
                     iv: [{
-                            schemaId: componentId,
-                            field1: 120,
-                        }, {
-                            schemaId: componentId,
-                            field1: 99,
-                        }],
+                        schemaId: componentId,
+                        field1: 120,
+                    }, {
+                        schemaId: componentId,
+                        field1: 99,
+                    }],
                 },
             });
 
@@ -943,10 +945,10 @@ describe('ContentForm', () => {
             expect(contentForm.value).toEqual({
                 field4: {
                     iv: [{
-                            schemaId: componentId,
-                            field11: 'Initial',
-                            field12: 12,
-                        }],
+                        schemaId: componentId,
+                        field11: 'Initial',
+                        field12: 12,
+                    }],
                 },
             });
         });
@@ -1058,8 +1060,8 @@ describe('ContentForm', () => {
             contentForm.load({
                 field4: {
                     iv: [{
-                            nested41: 'Text',
-                        }],
+                        nested41: 'Text',
+                    }],
                 },
             });
 
@@ -1146,10 +1148,10 @@ describe('ContentForm', () => {
             contentForm.load({
                 field4: {
                     iv: [{
-                            nested41: 'Text1',
-                        }, {
-                            nested41: 'Text2',
-                        }],
+                        nested41: 'Text1',
+                    }, {
+                        nested41: 'Text2',
+                    }],
                 },
             });
 

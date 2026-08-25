@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -166,8 +166,8 @@ export class SchemasState extends State<Snapshot> {
 
                     const selectedSchema =
                         s.selectedSchema?.id !== schema.id ?
-                        s.selectedSchema :
-                        null;
+                            s.selectedSchema :
+                            null;
 
                     return { ...s, schemas, selectedSchema };
                 }, 'Deleted');
@@ -204,10 +204,10 @@ export class SchemasState extends State<Snapshot> {
 
                         selectedSchema =
                             schema &&
-                            selectedSchema &&
-                            selectedSchema.id === schema.id ?
-                            schema :
-                            selectedSchema;
+                                selectedSchema &&
+                                selectedSchema.id === schema.id ?
+                                schema :
+                                selectedSchema;
                     }
 
                     return { ...s, schemas, selectedSchema };
@@ -379,10 +379,10 @@ export class SchemasState extends State<Snapshot> {
 
                 const selectedSchema =
                     schema &&
-                    s.selectedSchema &&
-                    s.selectedSchema.id === schema.id ?
-                    schema :
-                    s.selectedSchema;
+                        s.selectedSchema &&
+                        s.selectedSchema.id === schema.id ?
+                        schema :
+                        s.selectedSchema;
 
                 return { ...s, schemas, selectedSchema };
             }, 'Updated');

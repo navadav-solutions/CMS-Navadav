@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable object-curly-newline */
@@ -101,35 +101,36 @@ export class UsersState extends State<Snapshot> {
         const { page, pageSize, query } = this.snapshot;
 
         return this.usersService.getUsers(
-                pageSize,
-                pageSize * page,
-                query).pipe(
-            tap(({ canCreate, items: users, total }) => {
-                if (isReload) {
-                    this.dialogs.notifyInfo('i18n:users.reloaded');
-                }
-
-                this.next(s => {
-                    let selectedUser = s.selectedUser;
-
-                    if (selectedUser) {
-                        selectedUser = users.find(x => x.id === selectedUser!.id) || selectedUser;
+            pageSize,
+            pageSize * page,
+            query).pipe(
+                tap(({ canCreate, items: users, total }) => {
+                    if (isReload) {
+                        this.dialogs.notifyInfo('i18n:users.reloaded');
                     }
 
-                    return { ...s,
-                        canCreate,
-                        users,
-                        isLoaded: true,
-                        isLoading: false,
-                        selectedUser,
-                        total,
-                    };
-                }, 'Loading Success');
-            }),
-            finalize(() => {
-                this.next({ isLoading: false }, 'Loading Done');
-            }),
-            shareSubscribed(this.dialogs));
+                    this.next(s => {
+                        let selectedUser = s.selectedUser;
+
+                        if (selectedUser) {
+                            selectedUser = users.find(x => x.id === selectedUser!.id) || selectedUser;
+                        }
+
+                        return {
+                            ...s,
+                            canCreate,
+                            users,
+                            isLoaded: true,
+                            isLoading: false,
+                            selectedUser,
+                            total,
+                        };
+                    }, 'Loading Success');
+                }),
+                finalize(() => {
+                    this.next({ isLoading: false }, 'Loading Done');
+                }),
+                shareSubscribed(this.dialogs));
     }
 
     public create(request: CreateUserDto): Observable<UserDto> {
@@ -176,8 +177,8 @@ export class UsersState extends State<Snapshot> {
 
                     const selectedUser =
                         s.selectedUser?.id !== user.id ?
-                        s.selectedUser :
-                        null;
+                            s.selectedUser :
+                            null;
 
                     return { ...s, users, total: s.total - 1, selectedUser };
                 }, 'Delete');
@@ -207,8 +208,8 @@ export class UsersState extends State<Snapshot> {
 
             const selectedUser =
                 s.selectedUser?.id !== user.id ?
-                s.selectedUser :
-                user;
+                    s.selectedUser :
+                    user;
 
             return { ...s, users, selectedUser };
         }, 'Updated');

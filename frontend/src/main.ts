@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { OVERLAY_DEFAULT_CONFIG } from '@angular/cdk/overlay';
@@ -82,7 +82,7 @@ function configLocalizerService() {
 
 export class AppRouteReuseStrategy extends BaseRouteReuseStrategy {
     public shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot) {
-       return (future.routeConfig === curr.routeConfig) || (future.data['reuseId'] && future.data['reuseId'] === curr.data['reuseId']);
+        return (future.routeConfig === curr.routeConfig) || (future.data['reuseId'] && future.data['reuseId'] === curr.data['reuseId']);
     }
 }
 
@@ -128,8 +128,8 @@ bootstrapApplication(AppComponent, {
             useValue: basePath(),
         },
         {
-          provide: UI_TOUR_OPTIONS,
-          useValue: TASKS.defaults,
+            provide: UI_TOUR_OPTIONS,
+            useValue: TASKS.defaults,
         },
         {
             provide: OVERLAY_DEFAULT_CONFIG,

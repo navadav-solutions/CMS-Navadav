@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <LangVersion>latest</LangVersion>
@@ -141,12 +141,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="..\..\i18n\frontend_en.json" Link="Areas\Frontend\Resources\frontend_en.json" />
-    <EmbeddedResource Include="..\..\i18n\frontend_it.json" Link="Areas\Frontend\Resources\frontend_it.json" />
-    <EmbeddedResource Include="..\..\i18n\frontend_nl.json" Link="Areas\Frontend\Resources\frontend_nl.json" />
-    <EmbeddedResource Include="..\..\i18n\frontend_pt.json" Link="Areas\Frontend\Resources\frontend_pt.json" />
-    <EmbeddedResource Include="..\..\i18n\frontend_zh.json" Link="Areas\Frontend\Resources\frontend_zh.json" />
-    <EmbeddedResource Include="..\..\i18n\frontend_fr.json" Link="Areas\Frontend\Resources\frontend_fr.json" />
-    <EmbeddedResource Include="..\..\i18n\frontend_de.json" Link="Areas\Frontend\Resources\frontend_de.json" />
+    <EmbeddedResource Include="..\..\i18n\frontend_es.json" Link="Areas\Frontend\Resources\frontend_es.json" />
   </ItemGroup>
 
   <ItemGroup>

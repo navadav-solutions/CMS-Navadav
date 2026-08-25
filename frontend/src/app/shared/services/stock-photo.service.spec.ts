@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -39,16 +39,16 @@ describe('StockPhotoService', () => {
         expect(req.request.headers.get('If-Match')).toBeNull();
 
         req.flush([{
-                url: 'url1',
-                thumbUrl: 'thumb1',
-                user: 'user1',
-                userProfileUrl: 'user1-url',
-            }, {
-                url: 'url2',
-                thumbUrl: 'thumb2',
-                user: 'user2',
-                userProfileUrl: 'user2-url',
-            }]);
+            url: 'url1',
+            thumbUrl: 'thumb1',
+            user: 'user1',
+            userProfileUrl: 'user1-url',
+        }, {
+            url: 'url2',
+            thumbUrl: 'thumb2',
+            user: 'user2',
+            userProfileUrl: 'user2-url',
+        }]);
 
         expect(images!).toEqual([
             new StockPhotoDto('url1', 'thumb1', 'user1', 'user1-url'),

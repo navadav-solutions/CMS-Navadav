@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -27,7 +27,7 @@ import { AppLanguageDto, AppSettingsDto, DropdownMenuComponent, FieldDto, FormRo
         TranslatePipe,
     ],
 })
-export class StringValidationComponent  {
+export class StringValidationComponent {
     private readonly subscriptions = new Subscriptions();
 
     public readonly contentTypes = StringContentTypeValues;

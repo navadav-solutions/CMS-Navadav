@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
@@ -32,8 +32,8 @@ class LanguageSource implements AutocompleteSource {
 
         results.push(...this.languages.filter(x =>
             x.iso2Code !== query && (
-            regex.test(x.iso2Code) ||
-            regex.test(x.englishName))));
+                regex.test(x.iso2Code) ||
+                regex.test(x.englishName))));
 
         return of(results);
     }

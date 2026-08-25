@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable @angular-eslint/directive-selector */
@@ -113,7 +113,7 @@ export class TooltipDirective implements OnDestroy {
         try {
             this.renderer.setProperty(this.target, 'title', '');
             return true;
-        } catch  {
+        } catch {
             return false;
         }
     }

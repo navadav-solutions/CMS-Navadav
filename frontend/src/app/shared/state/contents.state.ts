@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -153,7 +153,7 @@ export abstract class ContentsStateBase extends State<Snapshot> {
     }
 
     public setFieldNames(fieldNames: ReadonlyArray<string> | null) {
-        this.next( { fieldNames }, 'Set field names.');
+        this.next({ fieldNames }, 'Set field names.');
     }
 
     private loadInternal(isReload: boolean, noSlowTotal: boolean) {
@@ -258,21 +258,21 @@ export abstract class ContentsStateBase extends State<Snapshot> {
         const job: Partial<IBulkUpdateContentsJobDto> = { type: 'ChangeStatus', status, dueTime };
 
         return this.bulkWithRetry(contents, job,
-                'i18n:contents.unpublishReferrerConfirmTitle',
-                'i18n:contents.unpublishReferrerConfirmText',
-                'unpublishReferencngContent').pipe(
-            switchMap(() => this.reloadContents(contents)), shareSubscribed(this.dialogs));
+            'i18n:contents.unpublishReferrerConfirmTitle',
+            'i18n:contents.unpublishReferrerConfirmText',
+            'unpublishReferencngContent').pipe(
+                switchMap(() => this.reloadContents(contents)), shareSubscribed(this.dialogs));
     }
 
     public deleteMany(contents: ReadonlyArray<ContentDto>) {
         const job: Partial<IBulkUpdateContentsJobDto> = { type: 'Delete' };
 
         return this.bulkWithRetry(contents, job,
-                'i18n:contents.deleteReferrerConfirmTitle',
-                'i18n:contents.deleteReferrerConfirmText',
-                'deleteReferencngContent').pipe(
-            switchMap(() => this.loadInternalCore(false, true)), shareSubscribed(this.dialogs));
-}
+            'i18n:contents.deleteReferrerConfirmTitle',
+            'i18n:contents.deleteReferrerConfirmText',
+            'deleteReferencngContent').pipe(
+                switchMap(() => this.loadInternalCore(false, true)), shareSubscribed(this.dialogs));
+    }
 
     public update(content: ContentDto, request: any): Observable<ContentDto> {
         return this.contentsService.putContent(this.appName, content, request, content.version).pipe(
@@ -343,8 +343,8 @@ export abstract class ContentsStateBase extends State<Snapshot> {
 
                         selectedContent =
                             s.selectedContent?.id !== content.id ?
-                            s.selectedContent :
-                            content;
+                                s.selectedContent :
+                                content;
                     }
 
                     return { ...s, contents, selectedContent };
@@ -366,8 +366,8 @@ export abstract class ContentsStateBase extends State<Snapshot> {
 
                 const selectedContent =
                     s.selectedContent?.id !== content.id ?
-                    s.selectedContent :
-                    content;
+                        s.selectedContent :
+                        content;
 
                 return { ...s, contents, selectedContent };
             }, 'Updated');

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 export * from './components/app-form.component';
@@ -32,7 +32,6 @@ export * from './components/cards/asset-uploads-size-summary-card.component';
 export * from './components/cards/iframe-card.component';
 export * from './components/cards/random-cat-card.component';
 export * from './components/cards/random-dog-card.component';
-export * from './components/cards/support-card.component';
 export * from './components/chat-dialog.component';
 export * from './components/comments/comment.component';
 export * from './components/comments/comments.component';
@@ -62,8 +61,6 @@ export * from './components/schema-category.component';
 export * from './components/search/query-list.component';
 export * from './components/search/search-form.component';
 export * from './components/search/shared-queries.component';
-export * from './components/table-header.component';
-export * from './components/team-form.component';
 export * from './components/tour-guide.component';
 export * from './components/tour-hint.directive';
 export * from './components/watching-users.component';
@@ -73,14 +70,11 @@ export * from './guards/load-apps.guard';
 export * from './guards/load-languages.guard';
 export * from './guards/load-schemas.guard';
 export * from './guards/load-settings.guard';
-export * from './guards/load-teams.guard';
 export * from './guards/must-be-authenticated.guard';
 export * from './guards/must-be-not-authenticated.guard';
 export * from './guards/rule-must-exist.guard';
 export * from './guards/schema-must-exist-published.guard';
 export * from './guards/schema-must-exist.guard';
 export * from './guards/schema-must-not-be-singleton.guard';
-export * from './guards/team-must-exist.guard';
 export * from './guards/unset-app.guard';
-export * from './guards/unset-team.guard';
 export * from './internal';

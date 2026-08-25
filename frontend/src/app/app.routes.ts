@@ -1,13 +1,13 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Routes } from '@angular/router';
-import { appMustExistGuard, loadAppsGuard, loadSettingsGuard, loadTeamsGuard, mustBeAuthenticatedGuard, mustBeNotAuthenticatedGuard, teamMustExistGuard, unsetAppGuard, unsetTeamGuard } from './shared';
-import { AppAreaComponent, ForbiddenPageComponent, HomePageComponent, InternalAreaComponent, LoginPageComponent, LogoutPageComponent, NotFoundPageComponent, TeamsAreaComponent } from './shell';
+import { appMustExistGuard, loadAppsGuard, loadSettingsGuard, mustBeAuthenticatedGuard, mustBeNotAuthenticatedGuard, unsetAppGuard } from './shared';
+import { AppAreaComponent, ForbiddenPageComponent, HomePageComponent, InternalAreaComponent, LoginPageComponent, LogoutPageComponent, NotFoundPageComponent } from './shell';
 
 export const APP_ROUTES: Routes = [
     {
@@ -18,29 +18,17 @@ export const APP_ROUTES: Routes = [
     {
         path: 'app',
         component: InternalAreaComponent,
-        canActivate: [mustBeAuthenticatedGuard, loadAppsGuard, loadTeamsGuard, loadSettingsGuard],
+        canActivate: [mustBeAuthenticatedGuard, loadAppsGuard, loadSettingsGuard],
         children: [
             {
                 path: '',
                 loadChildren: () => import('./features/apps/routes').then(m => m.APPS_ROUTES),
-                canActivate: [unsetAppGuard, unsetTeamGuard],
+                canActivate: [unsetAppGuard],
             },
             {
                 path: 'administration',
                 loadChildren: () => import('./features/administration/routes').then(m => m.ADMINISTRATION_ROUTES),
-                canActivate: [unsetAppGuard, unsetTeamGuard],
-            },
-            {
-                path: 'teams',
-                component: TeamsAreaComponent,
-                canActivate: [unsetAppGuard, unsetTeamGuard],
-                children: [
-                    {
-                        path: ':teamName',
-                        canActivate: [teamMustExistGuard],
-                        loadChildren: () => import('./features/teams/routes').then(m => m.TEAM_ROUTES),
-                    },
-                ],
+                canActivate: [unsetAppGuard],
             },
             {
                 path: ':appName',
@@ -70,11 +58,7 @@ export const APP_ROUTES: Routes = [
                     {
                         path: 'settings',
                         loadChildren: () => import('./features/settings/routes').then(m => m.SETTINGS_ROUTES),
-                    },
-                    {
-                        path: 'api',
-                        loadChildren: () => import('./features/api/routes').then(m => m.API_ROUTES),
-                    },
+                    }
                 ],
             },
         ],

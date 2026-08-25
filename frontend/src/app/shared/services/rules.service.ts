@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { HttpClient } from '@angular/common/http';
@@ -25,60 +25,60 @@ export type RuleTriggerMetadataDto = Readonly<{
 
 export const ALL_TRIGGERS: Record<string, RuleTriggerMetadataDto> = {
     AssetChanged: {
-        description: 'For asset changes like uploaded, updated (reuploaded), renamed, deleted...',
+        description: 'Para cambios en recursos como subidos, actualizados (resubidos), renombrados, eliminados...',
         display: 'Asset changed',
         iconColor: '#3389ff',
         iconCode: 'assets',
         hasProperties: true,
-        title: 'Asset changed',
+        title: 'Recurso modificado',
     },
     Comment: {
-        description: 'When a user is mentioned in any comment...',
+        description: 'Cuando un usuario es mencionado en cualquier comentario...',
         display: 'User mentioned',
         iconColor: '#3389ff',
         iconCode: 'comments',
         hasProperties: true,
-        title: 'User mentioned',
+        title: 'Usuario mencionado',
     },
     ContentChanged: {
-        description: 'For content changes like created, updated, published, unpublished...',
+        description: 'Para cambios en el contenido como creado, actualizado, publicado, despublicado...',
         display: 'Content changed',
         iconColor: '#3389ff',
         iconCode: 'contents',
         hasProperties: true,
-        title: 'Content changed',
+        title: 'Contenido modificado',
     },
     CronJob: {
-        description: 'To run tasks regularly, based on a cron expression...',
+        description: 'Para ejecutar tareas periódicamente, según una expresión cron...',
         display: 'CronJob',
         iconColor: '#3389ff',
         iconCode: 'clock',
         hasProperties: true,
-        title: 'ConJob scheduled',
+        title: 'CronJob programado',
     },
     Manual: {
-        description: 'To invoke processes manually, for example to update your static site...',
+        description: 'Para invocar procesos manualmente, por ejemplo para actualizar tu sitio estático...',
         display: 'Manually triggered',
         iconColor: '#3389ff',
         iconCode: 'play-line',
         hasProperties: false,
-        title: 'Manually triggered',
+        title: 'Activado manualmente',
     },
     SchemaChanged: {
-        description: 'When a schema definition has been created, updated, published or deleted...',
+        description: 'Cuando la definición de un esquema ha sido creada, actualizada, publicada o eliminada...',
         display: 'Schema changed',
         iconColor: '#3389ff',
         iconCode: 'schemas',
         hasProperties: true,
-        title: 'Schema changed',
+        title: 'Esquema modificado',
     },
     Usage: {
-        description: 'When monthly API calls exceed a specified limit for one time a month...',
+        description: 'Cuando las llamadas mensuales a la API superan un límite específico una vez al mes...',
         display: 'Usage exceeded',
         iconColor: '#3389ff',
         iconCode: 'dashboard',
         hasProperties: true,
-        title: 'Usage',
+        title: 'Uso',
     },
 };
 

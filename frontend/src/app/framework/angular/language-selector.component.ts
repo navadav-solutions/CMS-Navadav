@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 
@@ -27,7 +27,7 @@ export interface Language { iso2Code: string; englishName: string; isMasterLangu
         TooltipDirective,
     ],
 })
-export class LanguageSelectorComponent implements  OnInit {
+export class LanguageSelectorComponent implements OnInit {
     @Output()
     public languageChange = new EventEmitter<any>();
 

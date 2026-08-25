@@ -1,5 +1,5 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
  * Copyright (c) Sebastian Stehle. All rights r vbeserved

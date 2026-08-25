@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { expect } from 'vitest';
@@ -12,8 +12,8 @@ interface CustomMatchers<R = unknown> {
 }
 
 declare module 'vitest' {
-    interface Assertion<T = any> extends CustomMatchers<T> {}
-    interface AsymmetricMatchersContaining extends CustomMatchers {}
+    interface Assertion<T = any> extends CustomMatchers<T> { }
+    interface AsymmetricMatchersContaining extends CustomMatchers { }
 }
 
 expect.extend({

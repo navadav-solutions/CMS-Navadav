@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { HttpClient, HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, filter, map } from 'rxjs/operators';
 import { ApiUrlConfig, ErrorDto, HTTP, mapVersioned, pretifyError, Resource, Types, Versioned, VersionOrTag } from '@app/framework';
-import { AppDto, AppSettingsDto, AssetScriptsDto, CreateAppDto, TransferToTeamDto, UpdateAppDto, UpdateAppSettingsDto, UpdateAssetScriptsDto } from './../model';
+import { AppDto, AppSettingsDto, AssetScriptsDto, CreateAppDto, UpdateAppDto, UpdateAppSettingsDto, UpdateAssetScriptsDto } from './../model';
 
 @Injectable({
     providedIn: 'root',
@@ -34,17 +34,7 @@ export class AppsService {
             pretifyError('i18n:apps.loadFailed'));
     }
 
-    public getTeamApps(teamId: string): Observable<ReadonlyArray<AppDto>> {
-        const url = this.apiUrl.buildUrl(`/api/teams/${teamId}/apps`);
 
-        return this.http.get<any[]>(url).pipe(
-            map(body => {
-                const apps = body.map(AppDto.fromJSON);
-
-                return apps;
-            }),
-            pretifyError('i18n:apps.loadFailed'));
-    }
 
     public getApp(appName: string): Observable<AppDto> {
         const url = this.apiUrl.buildUrl(`/api/apps/${appName}`);
@@ -80,17 +70,7 @@ export class AppsService {
             pretifyError('i18n:apps.updateFailed'));
     }
 
-    public transferApp(appName: string, resource: Resource, dto: TransferToTeamDto, version: VersionOrTag): Observable<AppDto> {
-        const link = resource._links['transfer'];
 
-        const url = this.apiUrl.buildUrl(link.href);
-
-        return HTTP.requestVersioned(this.http, link.method, url, version, dto.toJSON()).pipe(
-            map(({ payload }) => {
-                return AppDto.fromJSON(payload.body);
-            }),
-            pretifyError('i18n:apps.transferFailed'));
-    }
 
     public getSettings(appName: string): Observable<AppSettingsDto> {
         const url = this.apiUrl.buildUrl(`/api/apps/${appName}/settings`);

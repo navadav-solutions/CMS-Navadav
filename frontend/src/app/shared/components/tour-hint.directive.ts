@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable @angular-eslint/no-input-rename */
@@ -50,8 +50,8 @@ export class TourHintDirective implements OnInit {
 
         const after =
             Types.isNumber(this.hintAfter) ?
-            this.hintAfter :
-            parseInt(this.hintAfter, 10);
+                this.hintAfter :
+                parseInt(this.hintAfter, 10);
 
         this.subscriptions.add(
             timer(after).subscribe(() => {

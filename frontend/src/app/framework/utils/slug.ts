@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import slugify from '@sindresorhus/slugify';
@@ -516,12 +516,12 @@ export function generateSlug(input: string, options?: { separator?: string; sing
         return input?.trim();
     }
 
-    const separator =  options?.separator || '-';
+    const separator = options?.separator || '-';
 
     let customReplacements =
         options?.singleCharDiacritic ?
-        LOWER_CASE_SINGLE_DIACRITICS :
-        LOWER_CASE_DIACRITICS;
+            LOWER_CASE_SINGLE_DIACRITICS :
+            LOWER_CASE_DIACRITICS;
 
     if (options?.allowed) {
         customReplacements = [...customReplacements];

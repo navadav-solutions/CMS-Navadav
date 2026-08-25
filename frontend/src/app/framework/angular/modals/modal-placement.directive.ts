@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AfterViewInit, booleanAttribute, Directive, ElementRef, Input, numberAttribute, OnDestroy, Renderer2 } from '@angular/core';
@@ -135,13 +135,13 @@ export class ModalPlacementDirective implements AfterViewInit, OnDestroy {
 
                 const maxWidth =
                     overflowX !== 'none'
-                    ? availableWidth > 0 ? `${availableWidth - this.scrollMargin}px` : 'none'
-                    : undefined;
+                        ? availableWidth > 0 ? `${availableWidth - this.scrollMargin}px` : 'none'
+                        : undefined;
 
                 const maxHeight =
                     overflowY !== 'none'
-                    ? availableHeight > 0 ? `${availableHeight - this.scrollMargin}px` : 'none'
-                    : undefined;
+                        ? availableHeight > 0 ? `${availableHeight - this.scrollMargin}px` : 'none'
+                        : undefined;
 
                 this.renderer.setStyle(modalRef, 'overflow-x', overflowX);
                 this.renderer.setStyle(modalRef, 'overflow-y', overflowY);

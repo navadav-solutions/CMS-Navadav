@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -101,7 +101,7 @@ export class TriggerDialogComponent implements OnInit {
 
         this.rulesService.validateTrigger(this.schemasState.appName, values)
             .subscribe({
-                error: error =>{
+                error: error => {
                     this.currentTrigger?.submitFailed(error);
                 },
                 complete: () => {

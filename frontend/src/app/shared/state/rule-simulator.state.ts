@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -87,8 +87,8 @@ export class RuleSimulatorState extends State<Snapshot> {
 
         const request =
             flow && trigger ?
-            this.rulesService.postSimulatedEvents(this.appName, new DynamicCreateRuleDto({ flow, trigger })) :
-            this.rulesService.getSimulatedEvents(this.appName, ruleId!);
+                this.rulesService.postSimulatedEvents(this.appName, new DynamicCreateRuleDto({ flow, trigger })) :
+                this.rulesService.getSimulatedEvents(this.appName, ruleId!);
 
         return request.pipe(
             tap(({ total, items: simulatedRuleEvents }) => {

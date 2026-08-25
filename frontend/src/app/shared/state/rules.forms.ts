@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
@@ -31,8 +31,8 @@ export class StepForm extends Form<UntypedFormGroup, Record<string, any>> {
 
             const validator =
                 property.isRequired ?
-                Validators.required :
-                Validators.nullValidator;
+                    Validators.required :
+                    Validators.nullValidator;
 
             let defaultValue = undefined;
 

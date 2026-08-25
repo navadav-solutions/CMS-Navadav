@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { firstValueFrom, of, onErrorResumeNextWith, throwError } from 'rxjs';
@@ -304,14 +304,14 @@ describe('FlowView', () => {
     it('should add step to If-branch', () => {
         const flow = new FlowView(dto, idGenerator)
             .add({
-            step: {
-                stepType: 'If',
-                branches: [
-                    { condition: 'Condition1' },
-                    { condition: 'Condition2' },
-                ],
-            },
-        })
+                step: {
+                    stepType: 'If',
+                    branches: [
+                        { condition: 'Condition1' },
+                        { condition: 'Condition2' },
+                    ],
+                },
+            })
             .add({ step: { stepType: 'Action' } }, undefined, '1', 1);
 
         expect(cleanup(flow.dto.toJSON())).toEqual({
@@ -478,14 +478,14 @@ describe('FlowView', () => {
         const flow = new FlowView(dto, idGenerator)
             .add({ step: { stepType: 'Action0' } })
             .add({
-            step: {
-                stepType: 'If',
-                branches: [
-                    { condition: 'Condition1' },
-                    { condition: 'Condition2' },
-                ],
-            },
-        }, '1')
+                step: {
+                    stepType: 'If',
+                    branches: [
+                        { condition: 'Condition1' },
+                        { condition: 'Condition2' },
+                    ],
+                },
+            }, '1')
             .add({ step: { stepType: 'Action1' } }, undefined, '2', 0)
             .add({ step: { stepType: 'Action2' } }, undefined, '2', 1)
             .add({ step: { stepType: 'Action3' } }, undefined, '2', 2)
@@ -576,14 +576,14 @@ describe('FlowView', () => {
         const flow = new FlowView(dto, idGenerator)
             .add({ step: { stepType: 'Action0' } })
             .add({
-            step: {
-                stepType: 'If',
-                branches: [
-                    { condition: 'Condition1' },
-                    { condition: 'Condition2' },
-                ],
-            },
-        }, '1')
+                step: {
+                    stepType: 'If',
+                    branches: [
+                        { condition: 'Condition1' },
+                        { condition: 'Condition2' },
+                    ],
+                },
+            }, '1')
             .add({ step: { stepType: 'Action1' } }, undefined, '2', 0)
             .add({ step: { stepType: 'Action2' } }, undefined, '2', 1)
             .add({ step: { stepType: 'Action3' } }, undefined, '2', 2);
@@ -669,14 +669,14 @@ describe('FlowView', () => {
         const flow = new FlowView(dto, idGenerator)
             .add({ step: { stepType: 'Action0' } })
             .add({
-            step: {
-                stepType: 'If',
-                branches: [
-                    { condition: 'Condition1' },
-                    { condition: 'Condition2' },
-                ],
-            },
-        }, '1')
+                step: {
+                    stepType: 'If',
+                    branches: [
+                        { condition: 'Condition1' },
+                        { condition: 'Condition2' },
+                    ],
+                },
+            }, '1')
             .add({ step: { stepType: 'Action1' } }, undefined, '2', 0)
             .add({ step: { stepType: 'Action2' } }, undefined, '2', 1)
             .add({ step: { stepType: 'Action3' } }, undefined, '2', 2);

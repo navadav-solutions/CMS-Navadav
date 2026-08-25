@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -162,8 +162,8 @@ export class RulesState extends State<Snapshot> {
 
                     const selectedRule =
                         s.selectedRule?.id !== rule.id ?
-                        s.selectedRule :
-                        null;
+                            s.selectedRule :
+                            null;
 
                     return { ...s, rules, selectedRule };
                 }, 'Deleted');
@@ -217,8 +217,8 @@ export class RulesState extends State<Snapshot> {
 
             const selectedRule =
                 s.selectedRule?.id !== rule.id ?
-                s.selectedRule :
-                rule;
+                    s.selectedRule :
+                    rule;
 
             return { ...s, rules, selectedRule };
         }, 'Updated');
@@ -300,7 +300,7 @@ export class FlowView {
     }
 
     public add(values: Mutable<IDynamicFlowStepDefinitionDto>, afterId?: string | null, parentId?: string | null, branchIndex: number = 0): FlowView {
-        if ((parentId && !isIf(this.dto.steps[parentId])) ) {
+        if ((parentId && !isIf(this.dto.steps[parentId]))) {
             return this;
         }
 
@@ -340,7 +340,7 @@ export class FlowView {
 
     public remove(id: string, parentId?: string | null, branchIndex: number = 0): FlowView {
         const step = this.dto.steps[id];
-        if (!step || (parentId && !isIf(this.dto.steps[parentId])) ) {
+        if (!step || (parentId && !isIf(this.dto.steps[parentId]))) {
             return this;
         }
 
@@ -381,7 +381,7 @@ export class FlowView {
 
 type IfValues = { branches: { condition: string; nextStepId?: string }[]; elseStepId: string | null | undefined };
 
-function isIf(definition?: IDynamicFlowStepDefinitionDto): definition is { step: IfValues }  {
+function isIf(definition?: IDynamicFlowStepDefinitionDto): definition is { step: IfValues } {
     return definition?.step['stepType'] === 'If';
 }
 

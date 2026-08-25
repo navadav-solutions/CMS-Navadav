@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -89,29 +89,29 @@ export class RuleEventsState extends State<Snapshot> {
         const { page, pageSize, ruleId } = this.snapshot;
 
         return this.rulesService.getEvents(this.appName,
-                pageSize,
-                pageSize * page,
-                ruleId).pipe(
-            tap(payload => {
-                const { total, items: ruleEvents, canCancelAll } = payload;
+            pageSize,
+            pageSize * page,
+            ruleId).pipe(
+                tap(payload => {
+                    const { total, items: ruleEvents, canCancelAll } = payload;
 
-                if (isReload) {
-                    this.dialogs.notifyInfo('i18n:rules.ruleEvents.reloaded');
-                }
+                    if (isReload) {
+                        this.dialogs.notifyInfo('i18n:rules.ruleEvents.reloaded');
+                    }
 
-                return this.next({
-                    canCancelAll,
-                    isLoaded: true,
-                    isLoading: false,
-                    resource: payload,
-                    ruleEvents,
-                    total,
-                }, 'Loading Success');
-            }),
-            finalize(() => {
-                this.next({ isLoading: false }, 'Loading Done');
-            }),
-            shareSubscribed(this.dialogs));
+                    return this.next({
+                        canCancelAll,
+                        isLoaded: true,
+                        isLoading: false,
+                        resource: payload,
+                        ruleEvents,
+                        total,
+                    }, 'Loading Success');
+                }),
+                finalize(() => {
+                    this.next({ isLoading: false }, 'Loading Done');
+                }),
+                shareSubscribed(this.dialogs));
     }
 
     public enqueue(event: RuleEventDto): Observable<any> {

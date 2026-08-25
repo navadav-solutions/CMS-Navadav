@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -26,7 +26,7 @@ import { CodeEditorComponent, ConfigureFieldRulesForm, ConfirmClickDirective, Co
         TranslatePipe,
     ],
 })
-export class SchemaFieldRulesFormComponent implements  OnInit {
+export class SchemaFieldRulesFormComponent implements OnInit {
     @Input()
     public schema!: SchemaDto;
 

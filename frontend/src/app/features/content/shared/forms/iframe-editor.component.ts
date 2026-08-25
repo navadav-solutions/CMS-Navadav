@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { booleanAttribute, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Input, numberAttribute, OnDestroy, Output, Renderer2, ViewChild } from '@angular/core';

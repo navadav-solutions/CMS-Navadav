@@ -21,29 +21,19 @@
                 </div>
             </div>
 
-            @if (groupedApps | async; as groups) {
+            @if (appsState.apps | async; as apps) {
                 <div class="apps-section" sqxTourStep="allApps">
-                    @for (group of groups; track trackByGroup($index, group)) {
-                        <div class="team">
-                            @if (group.team) {
-                                <div class="team-header"><sqx-team (leave)="leaveTeam($event)" [team]="group.team" /></div>
-                            }
-
-                            <div class="team-body row g-2" [class.padded]="group.team">
-                                @for (app of group.apps; track app.id) {
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <sqx-app [app]="app" (leave)="leaveApp($event)" />
-                                    </div>
-                                } @empty {
-                                    <small class="team-empty"> {{ "teams.empty" | sqxTranslate }}</small>
-                                }
+                    <div class="row g-2">
+                        @for (app of apps; track app.id) {
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <sqx-app [app]="app" (leave)="leaveApp($event)" />
                             </div>
-                        </div>
-                    } @empty {
-                        <div class="empty">
-                            <h5 class="empty-headline">{{ "apps.empty" | sqxTranslate }}</h5>
-                        </div>
-                    }
+                        } @empty {
+                            <div class="empty">
+                                <h5 class="empty-headline">{{ "apps.empty" | sqxTranslate }}</h5>
+                            </div>
+                        }
+                    </div>
                 </div>
             }
         </div>

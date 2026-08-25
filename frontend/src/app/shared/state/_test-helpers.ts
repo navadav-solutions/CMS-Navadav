@@ -1,20 +1,20 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { of } from 'rxjs';
 import { Mock } from 'typemoq';
-import { AppsState, AuthService, DateTime, FieldDto, FieldPropertiesDto, FieldRuleDto, NestedFieldDto, SchemaDto, SchemaPropertiesDto, SchemaScriptsDto, TeamsState, VersionTag } from '../';
+import { AppsState, AuthService, DateTime, FieldDto, FieldPropertiesDto, FieldRuleDto, NestedFieldDto, SchemaDto, SchemaPropertiesDto, SchemaScriptsDto, VersionTag } from '../';
 
 const app = 'my-app';
 const creation = DateTime.today().addDays(-2);
 const creator = 'me';
 const modified = DateTime.now().addDays(-1);
 const modifier = 'now-me';
-const team = 'my-team';
+
 const version = new VersionTag('1');
 const newVersion = new VersionTag('2');
 
@@ -26,13 +26,7 @@ appsState.setup(x => x.appName)
 appsState.setup(x => x.selectedApp)
     .returns(() => of(<any>{ name: app }));
 
-const teamsState = Mock.ofType<TeamsState>();
 
-teamsState.setup(x => x.teamId)
-    .returns(() => team);
-
-teamsState.setup(x => x.selectedTeam)
-    .returns(() => of(<any>{ id: team }));
 
 const authService = Mock.ofType<AuthService>();
 
@@ -127,7 +121,5 @@ export const TestValues = {
     modified,
     modifier,
     newVersion,
-    team,
-    teamsState,
     version,
 };

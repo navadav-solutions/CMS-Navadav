@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Routes } from '@angular/router';
@@ -13,7 +13,6 @@ import { ContributorsPageComponent } from './pages/contributors/contributors-pag
 import { JobsPageComponent } from './pages/jobs/jobs-page.component';
 import { LanguagesPageComponent } from './pages/languages/languages-page.component';
 import { MorePageComponent } from './pages/more/more-page.component';
-import { PlansPageComponent } from './pages/plans/plans-page.component';
 import { RolesPageComponent } from './pages/roles/roles-page.component';
 import { SettingsPageComponent } from './pages/settings/settings-page.component';
 import { WorkflowsPageComponent } from './pages/workflows/workflows-page.component';
@@ -137,26 +136,6 @@ export const SETTINGS_ROUTES: Routes = [
                         component: HelpComponent,
                         data: {
                             helpPage: '05-integrated/settings',
-                        },
-                    },
-                ],
-            },
-            {
-                path: 'plans',
-                component: PlansPageComponent,
-                children: [
-                    {
-                        path: 'history',
-                        component: HistoryComponent,
-                        data: {
-                            channel: 'settings.plan',
-                        },
-                    },
-                    {
-                        path: 'help',
-                        component: HelpComponent,
-                        data: {
-                            helpPage: '05-integrated/plans',
                         },
                     },
                 ],

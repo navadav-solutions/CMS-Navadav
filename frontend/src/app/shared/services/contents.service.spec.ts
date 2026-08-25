@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -80,8 +80,8 @@ describe('ContentsService', () => {
                     contentResponse(13),
                 ],
                 statuses: [{
-                        status: 'Draft', color: 'Gray',
-                    }],
+                    status: 'Draft', color: 'Gray',
+                }],
                 _links: {},
             });
 
@@ -374,16 +374,16 @@ describe('ContentsService', () => {
         expect(req.request.headers.get('If-Match')).toBeNull();
 
         req.flush([{
-                jobIndex: 0,
-                id: '123',
-            }, {
-                jobIndex: 1,
-                id: '456',
-                error: {
-                    statusCode: 400,
-                    message: 'Invalid',
-                },
-            }]);
+            jobIndex: 0,
+            id: '123',
+        }, {
+            jobIndex: 1,
+            id: '456',
+            error: {
+                statusCode: 400,
+                message: 'Invalid',
+            },
+        }]);
 
         expect(results!).toEqual([
             new BulkResultDto({ jobIndex: 0, id: '123' }),

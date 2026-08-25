@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { booleanAttribute, ChangeDetectionStrategy, Component, ContentChild, ElementRef, EventEmitter, forwardRef, Input, numberAttribute, OnDestroy, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
@@ -240,7 +240,7 @@ export class AutocompleteComponent extends StatefulControlComponent<State, Reado
                     } else {
                         this.setLoading(true);
 
-                        return this.itemsSource.find(query.text ).pipe(
+                        return this.itemsSource.find(query.text).pipe(
                             finalize(() => {
                                 this.setLoading(false);
                             }),
@@ -248,14 +248,14 @@ export class AutocompleteComponent extends StatefulControlComponent<State, Reado
                         );
                     }
                 }))
-            .subscribe(items => {
-                this.updateAnchor();
-                this.next({
-                    suggestedIndex: -1,
-                    suggestedItems: items || [],
-                    isSearching: false,
-                });
-            }));
+                .subscribe(items => {
+                    this.updateAnchor();
+                    this.next({
+                        suggestedIndex: -1,
+                        suggestedItems: items || [],
+                        isSearching: false,
+                    });
+                }));
     }
 
     public onKeyDown(event: KeyboardEvent) {
