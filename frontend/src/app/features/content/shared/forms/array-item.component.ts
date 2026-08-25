@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -178,7 +178,7 @@ function getTitle(formModel: ObjectFormBase) {
 
         addFields(formModel.schema.fields);
     } else if (Types.is(formModel.field, FieldDto) && formModel.field.nested) {
-       addFields(formModel.field.nested);
+        addFields(formModel.field.nested);
     }
 
     return values.join(', ');

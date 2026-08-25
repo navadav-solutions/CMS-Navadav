@@ -2,7 +2,7 @@
   "x-generator": "NSwag v14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))",
   "openapi": "3.0.0",
   "info": {
-    "title": "Squidex API",
+    "title": "NAVADAV API",
     "version": "1.0.0.0",
     "x-logo": {
       "url": "https://localhost:5001/images/logo-white.png",
@@ -3489,7 +3489,7 @@
           "Schemas"
         ],
         "summary": "Enable a schema field.",
-        "description": "A disabled field cannot not be edited in the squidex portal anymore, but will be part of the API response.",
+        "description": "A disabled field cannot not be edited in the NAVADAV portal anymore, but will be part of the API response.",
         "operationId": "SchemaFields_EnableField",
         "parameters": [
           {
@@ -3574,7 +3574,7 @@
           "Schemas"
         ],
         "summary": "Enable a nested field.",
-        "description": "A disabled field cannot not be edited in the squidex portal anymore, but will be part of the API response.",
+        "description": "A disabled field cannot not be edited in the NAVADAV portal anymore, but will be part of the API response.",
         "operationId": "SchemaFields_EnableNestedField",
         "parameters": [
           {
@@ -3670,7 +3670,7 @@
           "Schemas"
         ],
         "summary": "Disable a schema field.",
-        "description": "A disabled field cannot not be edited in the squidex portal anymore, but will be part of the API response.",
+        "description": "A disabled field cannot not be edited in the NAVADAV portal anymore, but will be part of the API response.",
         "operationId": "SchemaFields_DisableField",
         "parameters": [
           {
@@ -3755,7 +3755,7 @@
           "Schemas"
         ],
         "summary": "Disable a nested field.",
-        "description": "A disabled field cannot not be edited in the squidex portal anymore, but will be part of the API response.",
+        "description": "A disabled field cannot not be edited in the NAVADAV portal anymore, but will be part of the API response.",
         "operationId": "SchemaFields_DisableNestedField",
         "parameters": [
           {
@@ -6716,7 +6716,7 @@
           "Ping"
         ],
         "summary": "Get ping status of the API.",
-        "description": "Can be used to test, if the Squidex API is alive and responding.",
+        "description": "Can be used to test, if the NAVADAV API is alive and responding.",
         "operationId": "Ping_GetPing",
         "responses": {
           "204": {
@@ -6741,7 +6741,7 @@
           "Ping"
         ],
         "summary": "Get ping status.",
-        "description": "Can be used to test, if the Squidex API is alive and responding.",
+        "description": "Can be used to test, if the NAVADAV API is alive and responding.",
         "operationId": "Ping_GetAppPing",
         "parameters": [
           {
@@ -11953,7 +11953,7 @@
           "Assets"
         ],
         "summary": "Upload a new asset.",
-        "description": "You can only upload one file at a time. The mime type of the file is not calculated by Squidex and is required correctly.",
+        "description": "You can only upload one file at a time. The mime type of the file is not calculated by NAVADAV and is required correctly.",
         "operationId": "Assets_PostAsset",
         "parameters": [
           {
@@ -12232,7 +12232,7 @@
           "Assets"
         ],
         "summary": "Upsert an asset.",
-        "description": "You can only upload one file at a time. The mime type of the file is not calculated by Squidex and is required correctly.",
+        "description": "You can only upload one file at a time. The mime type of the file is not calculated by NAVADAV and is required correctly.",
         "operationId": "Assets_PostUpsertAsset",
         "parameters": [
           {
@@ -23836,7 +23836,7 @@
     "securitySchemes": {
       "squidex-oauth-auth": {
         "type": "openIdConnect",
-        "description": "Squidex uses OpenId Connect (OIDC) with the Client Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4).\r\n\r\nThe OpenId Connect Client Credentials flow can be used for machine to machine authentication. In this grant a specific user is not authorized but rather the credentials are verified and a generic `access_token` is returned.\r\n\r\nThe `access_token` is a signed JSON Web Token (JWT) which contains expiry information. \r\n\r\nTo retrieve an access token you must pass the Client ID and Client Secret to the token endpoint to authenticate yourself and get a token:\r\n\r\n    $ curl\r\n        -X POST 'https://localhost:5001/identity-server/connect/token' \r\n        -H 'Content-Type: application/x-www-form-urlencoded' \r\n        -d 'grant_type=client_credentials&\r\n            client_id=[CLIENT_ID]&\r\n            client_secret=[CLIENT_SECRET]&\r\n\t\t\tscope=squidex-api'\r\n\r\nPass this token to all consecutiv requests to the API via the `Authorization` header:\r\n\r\n     Authorization: Bearer <token>",
+        "description": "NAVADAV uses OpenId Connect (OIDC) with the Client Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4).\r\n\r\nThe OpenId Connect Client Credentials flow can be used for machine to machine authentication. In this grant a specific user is not authorized but rather the credentials are verified and a generic `access_token` is returned.\r\n\r\nThe `access_token` is a signed JSON Web Token (JWT) which contains expiry information. \r\n\r\nTo retrieve an access token you must pass the Client ID and Client Secret to the token endpoint to authenticate yourself and get a token:\r\n\r\n    $ curl\r\n        -X POST 'https://localhost:5001/identity-server/connect/token' \r\n        -H 'Content-Type: application/x-www-form-urlencoded' \r\n        -d 'grant_type=client_credentials&\r\n            client_id=[CLIENT_ID]&\r\n            client_secret=[CLIENT_SECRET]&\r\n\t\t\tscope=squidex-api'\r\n\r\nPass this token to all consecutiv requests to the API via the `Authorization` header:\r\n\r\n     Authorization: Bearer <token>",
         "openIdConnectUrl": "https://localhost:5001/identity-server/.well-known/openid-configuration"
       }
     }

@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 //  Squidex Headless CMS
 // ==========================================================================
 //  Copyright (c) Squidex UG (haftungsbeschraenkt)
@@ -32,7 +32,7 @@ public static class WebExtensions
 
     public static IApplicationBuilder UseSquidexLocalization(this IApplicationBuilder app)
     {
-        var supportedCultures = new[] { "en", "nl", "it", "zh", "pt", "fr", "de" };
+        var supportedCultures = new[] { "es", "en" };
 
         var localizationOptions = new RequestLocalizationOptions()
             .SetDefaultCulture(supportedCultures[0])

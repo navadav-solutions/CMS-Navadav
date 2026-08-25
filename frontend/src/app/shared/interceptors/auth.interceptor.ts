@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Location } from '@angular/common';
@@ -22,7 +22,7 @@ export const authInterceptor = (req: HttpRequest<unknown>, next: HttpHandlerFn) 
     const location = inject(Location);
     const router = inject(Router);
 
-    const makeRequest:InternalFunction = (user, renew) => {
+    const makeRequest: InternalFunction = (user, renew) => {
         const token = user?.authorization || '';
 
         req = req.clone({

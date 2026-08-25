@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -77,16 +77,16 @@ export class ContentHistoryPageComponent implements OnInit {
 
     public changeStatus(status: string) {
         this.contentPage.checkPendingChangesBeforeChangingStatus().pipe(
-                defined(),
-                switchSafe(_ => this.dueTimeSelector.selectDueTime(status)),
-                switchSafe(d => this.contentsState.changeManyStatus([this.content], status, d)))
+            defined(),
+            switchSafe(_ => this.dueTimeSelector.selectDueTime(status)),
+            switchSafe(d => this.contentsState.changeManyStatus([this.content], status, d)))
             .subscribe();
     }
 
     public createDraft() {
         this.contentPage.checkPendingChangesBeforeChangingStatus().pipe(
-                defined(),
-                switchSafe(() => this.contentsState.createDraft(this.content)))
+            defined(),
+            switchSafe(() => this.contentsState.createDraft(this.content)))
             .subscribe();
     }
 

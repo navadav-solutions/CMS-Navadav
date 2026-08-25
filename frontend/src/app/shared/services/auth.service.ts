@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -98,14 +98,14 @@ export class AuthService {
         Log.setLogger(console);
 
         this.userManager = new UserManager({
-                       client_id: 'squidex-frontend',
-                           scope: 'squidex-api openid profile email permissions',
-                    redirect_uri: apiUrl.buildUrl('login;'),
-        post_logout_redirect_uri: apiUrl.buildUrl('logout'),
-             silent_redirect_uri: apiUrl.buildUrl('client-callback-silent.html'),
-              popup_redirect_uri: apiUrl.buildUrl('client-callback-popup.html'),
-                       authority: apiUrl.buildUrl('identity-server/'),
-                      userStore: new WebStorageStateStore({ store: window.localStorage || window.sessionStorage }),
+            client_id: 'squidex-frontend',
+            scope: 'squidex-api openid profile email permissions',
+            redirect_uri: apiUrl.buildUrl('login;'),
+            post_logout_redirect_uri: apiUrl.buildUrl('logout'),
+            silent_redirect_uri: apiUrl.buildUrl('client-callback-silent.html'),
+            popup_redirect_uri: apiUrl.buildUrl('client-callback-popup.html'),
+            authority: apiUrl.buildUrl('identity-server/'),
+            userStore: new WebStorageStateStore({ store: window.localStorage || window.sessionStorage }),
         });
 
         this.userManager.events.addUserLoaded(user => {

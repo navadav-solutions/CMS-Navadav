@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { HttpClient } from '@angular/common/http';
@@ -99,19 +99,19 @@ export class TranslationsService {
 
             source.addEventListener('error', (event) => {
 
-            const data = (event as any)['data'];
-            try {
-                if (data) {
-                    try {
-                        subscriber.error(JSON.parse(data).message);
-                    } finally {
-                        subscriber.error(data);
+                const data = (event as any)['data'];
+                try {
+                    if (data) {
+                        try {
+                            subscriber.error(JSON.parse(data).message);
+                        } finally {
+                            subscriber.error(data);
+                        }
                     }
+                } finally {
+                    subscriber.complete();
+                    source.close();
                 }
-            } finally {
-                subscriber.complete();
-                source.close();
-            }
             });
 
             return () => {

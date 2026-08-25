@@ -87,33 +87,6 @@
                 <h5>{{ "apps.generalSettingsDangerZone" | sqxTranslate }}</h5>
 
                 <div class="card card-body">
-                    <form [formGroup]="transferForm.form" (ngSubmit)="transfer()">
-                        <div class="row pt-2 g-2">
-                            <div class="col-6">
-                                <h5>{{ "apps.transferTitle" | sqxTranslate }}</h5>
-                                <sqx-form-hint> {{ "apps.transferWarning" | sqxTranslate }}</sqx-form-hint>
-                            </div>
-
-                            <div class="col">
-                                <select class="form-select" formControlName="teamId">
-                                    <option [ngValue]="null">-</option>
-
-                                    @for (team of teamsState.snapshot.teams; track team) {
-                                        <option [ngValue]="team.id">{{ team.name }}</option>
-                                    }
-                                </select>
-                            </div>
-
-                            <div class="col-auto">
-                                <button class="btn btn-primary" [disabled]="!isTransferable" type="button" type="submit">
-                                    {{ "apps.transfer" | sqxTranslate }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <hr />
-
                     <div class="row">
                         <div class="col">
                             <h5>{{ "apps.delete" | sqxTranslate }}</h5>

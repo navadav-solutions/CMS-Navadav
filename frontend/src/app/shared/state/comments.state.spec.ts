@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { of } from 'rxjs';
@@ -239,8 +239,8 @@ describe('CommentsState', () => {
     });
 
     it('should get grouped comments without resolved', () => {
-        sharedArray.add({ id: '1', isResolved: true  } as any);
-        sharedArray.add({ id: '2'} as any);
+        sharedArray.add({ id: '1', isResolved: true } as any);
+        sharedArray.add({ id: '2' } as any);
         sharedArray.add({ id: '3', replyTo: '5' } as any);
         sharedArray.add({ id: '4', replyTo: '2' } as any);
 

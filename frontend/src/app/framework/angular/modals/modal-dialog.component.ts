@@ -1,11 +1,11 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
-import { CdkTrapFocus  } from '@angular/cdk/a11y';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
 import { AfterViewInit, booleanAttribute, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
 import { TranslatePipe } from '../pipes/translate.pipe';
 import { ShortcutComponent } from '../shortcut.component';

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -105,24 +105,24 @@ export class LanguagesState extends State<Snapshot> {
         this.next({ isLoading: true }, 'Loading Started');
 
         return forkJoin([
-                this.getAllLanguages(),
-                this.getAppLanguages()]).pipe(
-            map(args => {
-                return { allLanguages: args[0], languages: args[1] };
-            }),
-            tap(({ allLanguages, languages }) => {
-                if (isReload) {
-                    this.dialogs.notifyInfo('i18n:languages.reloaded');
-                }
+            this.getAllLanguages(),
+            this.getAppLanguages()]).pipe(
+                map(args => {
+                    return { allLanguages: args[0], languages: args[1] };
+                }),
+                tap(({ allLanguages, languages }) => {
+                    if (isReload) {
+                        this.dialogs.notifyInfo('i18n:languages.reloaded');
+                    }
 
-                const sorted = allLanguages.sortedByString(x => x.englishName);
+                    const sorted = allLanguages.sortedByString(x => x.englishName);
 
-                this.replaceLanguages(languages.payload, languages.version, sorted);
-            }),
-            finalize(() => {
-                this.next({ isLoading: false }, 'Loading Done');
-            }),
-            shareSubscribed(this.dialogs));
+                    this.replaceLanguages(languages.payload, languages.version, sorted);
+                }),
+                finalize(() => {
+                    this.next({ isLoading: false }, 'Loading Done');
+                }),
+                shareSubscribed(this.dialogs));
     }
 
     public add(language: string): Observable<any> {

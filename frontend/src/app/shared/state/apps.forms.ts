@@ -1,15 +1,15 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 
 
 import { UntypedFormControl, Validators } from '@angular/forms';
 import { ExtendedFormGroup, Form, TemplatedFormArray, ValidatorsEx } from '@app/framework';
-import { AppDto, AppSettingsDto, CreateAppDto, EditorDto, PatternDto, TransferToTeamDto, UpdateAppDto, UpdateAppSettingsDto } from '../model';
+import { AppDto, AppSettingsDto, CreateAppDto, EditorDto, PatternDto, UpdateAppDto, UpdateAppSettingsDto } from '../model';
 
 export class CreateAppForm extends Form<ExtendedFormGroup, CreateAppDto> {
     constructor() {
@@ -27,17 +27,7 @@ export class CreateAppForm extends Form<ExtendedFormGroup, CreateAppDto> {
     }
 }
 
-export class TransferAppForm extends Form<ExtendedFormGroup, TransferToTeamDto, AppDto> {
-    constructor() {
-        super(new ExtendedFormGroup({
-            teamId: new UntypedFormControl(''),
-        }));
-    }
 
-    protected transformSubmit(value: any) {
-        return new TransferToTeamDto(value);
-    }
-}
 
 export class UpdateAppForm extends Form<ExtendedFormGroup, UpdateAppDto, AppDto> {
     constructor() {

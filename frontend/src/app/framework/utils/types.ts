@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 export module Types {
@@ -131,7 +131,7 @@ export module Types {
         if (lazyString) {
             const result =
                 (lhs === '' && Types.isUndefined(rhs) ||
-                (rhs === '' && Types.isUndefined(lhs)));
+                    (rhs === '' && Types.isUndefined(lhs)));
 
             if (result) {
                 return true;

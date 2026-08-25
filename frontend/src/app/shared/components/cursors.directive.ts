@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
@@ -11,7 +11,7 @@ import { CollaborationService, Subscriptions } from '@app/shared/internal';
 @Directive({
     selector: '[sqxCursors]',
 })
-export class CursorsDirective  {
+export class CursorsDirective {
     private readonly subscriptions = new Subscriptions();
 
     constructor(

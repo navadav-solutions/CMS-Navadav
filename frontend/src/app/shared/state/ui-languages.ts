@@ -1,33 +1,18 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 type UILanguage = { iso2Code: string; localName: string };
 
 export module UILanguages {
     export const ALL: ReadonlyArray<UILanguage> = [{
+        iso2Code: 'es',
+        localName: 'Español',
+    }, {
         iso2Code: 'en',
         localName: 'English',
-    }, {
-        iso2Code: 'fr',
-        localName: 'Français',
-    }, {
-        iso2Code: 'nl',
-        localName: 'Nederlands',
-    }, {
-        iso2Code: 'it',
-        localName: 'Italiano',
-    }, {
-        iso2Code: 'zh',
-        localName: '简体中文',
-    }, {
-        iso2Code: 'pt',
-        localName: 'Portuguese',
-    }, {
-        iso2Code: 'de',
-        localName: 'Deutsch',
     }];
 }

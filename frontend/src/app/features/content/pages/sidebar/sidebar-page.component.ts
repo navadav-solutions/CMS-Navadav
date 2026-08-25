@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -29,8 +29,8 @@ export class SidebarPageComponent {
     ], (schema, content) => {
         const url =
             content ?
-            schema.properties.contentSidebarUrl :
-            schema.properties.contentsSidebarUrl;
+                schema.properties.contentSidebarUrl :
+                schema.properties.contentsSidebarUrl;
 
         return url;
     });

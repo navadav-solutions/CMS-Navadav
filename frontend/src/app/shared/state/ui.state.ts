@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -12,7 +12,7 @@ import { debug, hasAnyLink, shareSubscribed, State, Types } from '@app/framework
 import { UIService } from '../services/ui.service';
 import { UsersService } from '../services/users.service';
 
-type Settings = { canCreateApps?: boolean; canCreateTeams?: boolean; [key: string]: any };
+type Settings = { canCreateApps?: boolean; canCreateTeams?: boolean;[key: string]: any };
 
 interface Snapshot {
     // All common settings.

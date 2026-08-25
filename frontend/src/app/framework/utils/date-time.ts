@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { addDays, addHours, addMilliseconds, addMinutes, addMonths, addSeconds, addYears, format, formatDistanceToNow, formatISO, parse, parseISO, startOfDay, startOfMonth, startOfTomorrow, startOfWeek, startOfYesterday } from 'date-fns';

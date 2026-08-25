@@ -1,5 +1,5 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
  * Copyright (c) Sebastian Stehle. All rights r vbeserved
@@ -28,7 +28,7 @@ interface State {
         ControlErrorsMessagesComponent,
     ],
 })
-export class ControlErrorsComponent extends StatefulComponent<State> implements  OnDestroy {
+export class ControlErrorsComponent extends StatefulComponent<State> implements OnDestroy {
     private readonly subscriptions = new Subscriptions();
     private controlDisplayName = '';
     private control: AbstractControl | null = null;

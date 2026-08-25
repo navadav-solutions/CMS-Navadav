@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 
@@ -79,12 +79,12 @@ export class MenuItemComponent {
 
     public ngOnChanges(changes: TypedSimpleChanges<MenuItemComponent>) {
         if (changes.label || changes.menuLabel) {
-             const key = this.menuLabel || this.label;
-             if (key) {
+            const key = this.menuLabel || this.label;
+            if (key) {
                 this.actualMenuLabel = this.localizerService.getOrKey(key);
-             } else {
+            } else {
                 this.actualMenuLabel = '';
-             }
+            }
         }
     }
 

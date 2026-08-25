@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { inject, Injectable } from '@angular/core';
@@ -13,7 +13,7 @@ import * as Y from 'yjs';
 import { Types, UIOptions } from '@app/framework';
 import { AuthService, Profile } from './auth.service';
 
-type AwarenessState = { user: Profile; [key: string]: any };
+type AwarenessState = { user: Profile;[key: string]: any };
 
 export type CollaborationProvider = { awareness: Awareness; doc: Y.Doc; destroy: () => void };
 

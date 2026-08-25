@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { generateSlug } from './slug';
@@ -14,14 +14,14 @@ describe('generateSlug', () => {
             string,
             string,
         ]> = [
-            ['Hello World', '-', 'hello-world'],
-            ['Hello/World', '-', 'hello-world'],
-            ['Hello World', '_', 'hello_world'],
-            ['Hello/World', '_', 'hello_world'],
-            ['Hello World ', '_', 'hello_world'],
-            ['Hello World-', '_', 'hello_world'],
-            ['Hello/World_', '_', 'hello_world'],
-        ];
+                ['Hello World', '-', 'hello-world'],
+                ['Hello/World', '-', 'hello-world'],
+                ['Hello World', '_', 'hello_world'],
+                ['Hello/World', '_', 'hello_world'],
+                ['Hello World ', '_', 'hello_world'],
+                ['Hello World-', '_', 'hello_world'],
+                ['Hello/World_', '_', 'hello_world'],
+            ];
 
         cases.forEach(([input, separator, expected]) => {
             it(`slugifies "${input}" with separator "${separator}" to "${expected}"`, () => {
@@ -35,10 +35,10 @@ describe('generateSlug', () => {
             string,
             string,
         ]> = [
-            ['ö', 'oe'],
-            ['ü', 'ue'],
-            ['ä', 'ae'],
-        ];
+                ['ö', 'oe'],
+                ['ü', 'ue'],
+                ['ä', 'ae'],
+            ];
 
         cases.forEach(([input, expected]) => {
             it(`slugifies "${input}" to "${expected}"`, () => {
@@ -52,10 +52,10 @@ describe('generateSlug', () => {
             string,
             string,
         ]> = [
-            ['ö', 'o'],
-            ['ü', 'u'],
-            ['ä', 'a'],
-        ];
+                ['ö', 'o'],
+                ['ü', 'u'],
+                ['ä', 'a'],
+            ];
 
         cases.forEach(([input, expected]) => {
             it(`slugifies "${input}" to "${expected}" with singleCharDiacritic=true`, () => {
@@ -69,13 +69,13 @@ describe('generateSlug', () => {
             string,
             string,
         ]> = [
-            ['Físh', 'fish'],
-            ['źish', 'zish'],
-            ['żish', 'zish'],
-            ['fórm', 'form'],
-            ['fòrm', 'form'],
-            ['fårt', 'fart'],
-        ];
+                ['Físh', 'fish'],
+                ['źish', 'zish'],
+                ['żish', 'zish'],
+                ['fórm', 'form'],
+                ['fòrm', 'form'],
+                ['fårt', 'fart'],
+            ];
 
         cases.forEach(([input, expected]) => {
             it(`slugifies "${input}" to "${expected}"`, () => {
@@ -90,10 +90,10 @@ describe('generateSlug', () => {
             string,
             string,
         ]> = [
-            ['Hello my&World ', '_', 'hello_my&world'],
-            ['Hello my&World-', '_', 'hello_my&world'],
-            ['Hello my/World_', '_', 'hello_my/world'],
-        ];
+                ['Hello my&World ', '_', 'hello_my&world'],
+                ['Hello my&World-', '_', 'hello_my&world'],
+                ['Hello my/World_', '_', 'hello_my/world'],
+            ];
 
         cases.forEach(([input, separator, expected]) => {
             it(`slugifies "${input}" with separator "${separator}" keeping chars`, () => {

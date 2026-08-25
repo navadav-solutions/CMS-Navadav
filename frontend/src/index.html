@@ -1,67 +1,70 @@
 <!doctype html>
 <html>
-    <head>
-        <base href="/" />
 
-        <meta charset="UTF-8" />
+<head>
+    <base href="/" />
 
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta charset="UTF-8" />
 
-        <title>Squidex Headless CMS</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
+    <title>CMS Navadav</title>
+
+    <style>
+        #outdated {
+            display: none;
+        }
+    </style>
+
+    <noscript>
         <style>
-            #outdated {
+            .loading {
                 display: none;
             }
         </style>
+    </noscript>
 
-        <noscript>
-            <style>
-                .loading {
-                    display: none;
-                }
-            </style>
-        </noscript>
+    <link href="./scripts/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet" type="text/css" />
 
-        <link href="./scripts/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet" type="text/css" />
+    <script src="./scripts/outdatedbrowser/outdatedbrowser.min.js"></script>
 
-        <script src="./scripts/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <script>
+        function addLoadEvent(callback) {
+            var oldOnload = window.onload;
 
-        <script>
-            function addLoadEvent(callback) {
-                var oldOnload = window.onload;
-
-                if (typeof window.onload != "function") {
-                    window.onload = callback;
-                } else {
-                    window.onload = function () {
-                        if (oldOnload) {
-                            oldOnload();
-                        }
-                        callback();
-                    };
-                }
+            if (typeof window.onload != "function") {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    if (oldOnload) {
+                        oldOnload();
+                    }
+                    callback();
+                };
             }
+        }
 
-            addLoadEvent(function () {
-                outdatedBrowser({
-                    lowerThan: "object-fit",
-                    languagePath: "./scripts/outdatedbrowser/lang/en.html",
-                });
+        addLoadEvent(function () {
+            outdatedBrowser({
+                lowerThan: "object-fit",
+                languagePath: "./scripts/outdatedbrowser/lang/en.html",
             });
-        </script>
-    </head>
-    <body>
-        <sqx-app>
-            <div class="loading">
-                <img src="./images/loader.svg" />
-                <div>Loading Squidex</div>
-            </div>
-        </sqx-app>
-        <div id="outdated"></div>
+        });
+    </script>
+</head>
 
-        <script>
-            /* INJECT OPTIONS */
-        </script>
-    </body>
+<body>
+    <sqx-app>
+        <div class="loading">
+            <img src="./images/loader.svg" />
+            <div>Loading Navadav</div>
+        </div>
+    </sqx-app>
+    <div id="outdated"></div>
+
+    <script>
+        /* INJECT OPTIONS */
+    </script>
+</body>
+
 </html>

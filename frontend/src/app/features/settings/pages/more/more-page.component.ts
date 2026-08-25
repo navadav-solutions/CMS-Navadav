@@ -1,15 +1,15 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { AppDto, AppsState, AvatarComponent, ConfirmClickDirective, defined, DialogService, FileDropDirective, FormErrorComponent, FormHintComponent, FormRowComponent, LayoutComponent, ListViewComponent, ProgressBarComponent, SidebarMenuDirective, Subscriptions, TeamsState, TooltipDirective, TourStepDirective, TransferAppForm, TranslatePipe, Types, UpdateAppForm } from '@app/shared';
+import { AppDto, AppsState, AvatarComponent, ConfirmClickDirective, defined, DialogService, FileDropDirective, FormErrorComponent, FormHintComponent, FormRowComponent, LayoutComponent, ListViewComponent, ProgressBarComponent, SidebarMenuDirective, Subscriptions, TooltipDirective, TourStepDirective, TranslatePipe, Types, UpdateAppForm } from '@app/shared';
 
 @Component({
     selector: 'sqx-more-page',
@@ -42,17 +42,12 @@ export class MorePageComponent implements OnInit {
 
     public app!: AppDto;
 
-    public teams: { id: string | null; name: string }[] = [];
-
     public isEditable = false;
     public isEditableImage = false;
     public isDeletable = false;
-    public isTransferable = false;
 
     public uploading = false;
     public uploadProgress = 10;
-
-    public transferForm = new TransferAppForm();
 
     public updateForm = new UpdateAppForm();
 
@@ -60,7 +55,6 @@ export class MorePageComponent implements OnInit {
         private readonly appsState: AppsState,
         private readonly dialogs: DialogService,
         private readonly router: Router,
-        public readonly teamsState: TeamsState,
     ) {
     }
 
@@ -73,13 +67,9 @@ export class MorePageComponent implements OnInit {
                     this.isDeletable = app.canDelete;
                     this.isEditable = app.canUpdateGeneral;
                     this.isEditableImage = app.canUpdateImage;
-                    this.isTransferable = app.canUpdateTeam;
 
                     this.updateForm.load(app);
                     this.updateForm.setEnabled(this.isEditable);
-
-                    this.transferForm.load(app);
-                    this.transferForm.setEnabled(this.isTransferable);
                 }));
 
         this.appsState.reloadApps();
@@ -108,29 +98,6 @@ export class MorePageComponent implements OnInit {
             });
     }
 
-    public transfer() {
-        if (!this.isTransferable) {
-            return;
-        }
-
-        const value = this.transferForm.submit();
-        if (!value) {
-            return;
-        }
-
-        this.appsState.transfer(this.app, value)
-            .subscribe({
-                next: app => {
-                    this.transferForm.submitCompleted({ newValue: app });
-                },
-                error: error => {
-                    this.dialogs.notifyError(error);
-
-                    this.transferForm.submitFailed(error);
-                },
-            });
-    }
-
     public uploadImage(file: ReadonlyArray<File>) {
         if (!this.isEditableImage) {
             return;
@@ -142,7 +109,7 @@ export class MorePageComponent implements OnInit {
         this.appsState.uploadImage(this.app, file[0])
             .subscribe({
                 next: value => {
-                if (Types.isNumber(value)) {
+                    if (Types.isNumber(value)) {
                         this.uploadProgress = value;
                     }
                 },

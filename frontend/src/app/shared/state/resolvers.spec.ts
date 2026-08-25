@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { TestBed } from '@angular/core/testing';
@@ -47,8 +47,8 @@ describe('ResolveContents', () => {
 
         const promise = firstValueFrom(contentsResolver.resolveMany(ids));
         const result = await Promise.race([
-          promise.then(() => 'resolved'),
-          new Promise(resolve => setTimeout(() => resolve('pending'), 1)),
+            promise.then(() => 'resolved'),
+            new Promise(resolve => setTimeout(() => resolve('pending'), 1)),
         ]);
 
         expect(result).toBe('pending');

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { ValidatorFn, Validators } from '@angular/forms';
@@ -20,7 +20,7 @@ export class HtmlValue {
 
 export type ContentReferences = Readonly<{
     // The reference values by field name.
-    [fieldName: string ]: ContentFieldData<ContentReferencesValue>;
+    [fieldName: string]: ContentFieldData<ContentReferencesValue>;
 }>;
 
 export type ContentFieldData<T = any> = Readonly<{

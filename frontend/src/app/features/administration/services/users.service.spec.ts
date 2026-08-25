@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -107,8 +107,8 @@ describe('UsersService', () => {
 
     it('should make post request to create user', inject([UsersService, HttpTestingController], (userManagementService: UsersService, httpMock: HttpTestingController) => {
         const dto = new CreateUserDto({
-            email: 'mail@squidex.io',
-            displayName: 'Squidex User',
+            email: 'mail@navadav.com',
+            displayName: 'NAVADAV User',
             permissions: ['Permission1'],
             password: 'password',
         });
@@ -130,8 +130,8 @@ describe('UsersService', () => {
 
     it('should make put request to update user', inject([UsersService, HttpTestingController], (userManagementService: UsersService, httpMock: HttpTestingController) => {
         const dto = new UpdateUserDto({
-            email: 'mail@squidex.io',
-            displayName: 'Squidex User',
+            email: 'mail@navadav.com',
+            displayName: 'NAVADAV User',
             permissions: ['Permission1'],
             password: 'password',
         });

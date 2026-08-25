@@ -1,21 +1,17 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { combineLatest } from 'rxjs';
-import { map, take } from 'rxjs/operators';
-import { AppDto, AppFormComponent, AppsState, AuthService, DialogModel, FeatureDto, LocalStoreService, ModalDirective, NewsService, Settings, TeamDto, TeamsState, TemplateDto, TemplatesState, TitleComponent, TourState, TourStepDirective, TranslatePipe, UIOptions, UIState } from '@app/shared';
+import { take } from 'rxjs/operators';
+import { AppDto, AppFormComponent, AppsState, AuthService, DialogModel, FeatureDto, LocalStoreService, ModalDirective, NewsService, Settings, TemplateDto, TemplatesState, TitleComponent, TourState, TourStepDirective, TranslatePipe, UIOptions, UIState } from '@app/shared';
 import { AppComponent } from './app.component';
 import { NewsDialogComponent } from './news-dialog.component';
 import { OnboardingDialogComponent } from './onboarding-dialog.component';
-import { TeamComponent } from './team.component';
-
-type GroupedApps = { team?: TeamDto; apps: AppDto[] };
 
 @Component({
     selector: 'sqx-apps-page',
@@ -28,7 +24,6 @@ type GroupedApps = { team?: TeamDto; apps: AppDto[] };
         ModalDirective,
         NewsDialogComponent,
         OnboardingDialogComponent,
-        TeamComponent,
         TitleComponent,
         TourStepDirective,
         TranslatePipe,
@@ -47,37 +42,12 @@ export class AppsPageComponent implements OnInit {
 
     public starters = this.templatesState.starters;
 
-    public groupedApps =
-        combineLatest([
-            this.appsState.apps,
-            this.teamsState.teams,
-        ]).pipe(map(([apps, teams]) => {
-            const grouped: GroupedApps[] = [{ apps: [] }];
-
-            for (const team of teams) {
-                grouped.push({ team, apps: [] });
-            }
-
-            for (const app of apps) {
-                const group = grouped.find(x => x.team?.id === app.teamId) || grouped[0];
-
-                group.apps.push(app);
-            }
-
-            if (grouped[0].apps.length === 0) {
-                grouped.shift();
-            }
-
-            return grouped;
-        }));
-
     constructor(
         public readonly authState: AuthService,
         public readonly uiState: UIState,
-        private readonly appsState: AppsState,
+        public readonly appsState: AppsState,
         private readonly localStore: LocalStoreService,
         private readonly newsService: NewsService,
-        private readonly teamsState: TeamsState,
         private readonly templatesState: TemplatesState,
         private readonly tourState: TourState,
         private readonly uiOptions: UIOptions,
@@ -116,7 +86,7 @@ export class AppsPageComponent implements OnInit {
                                 this.localStore.setInt(Settings.Local.NEWS_VERSION, result.version);
                             }
                         });
-                    }
+                }
             });
 
         this.templatesState.load(false, true);
@@ -129,13 +99,5 @@ export class AppsPageComponent implements OnInit {
 
     public leaveApp(app: AppDto) {
         this.appsState.leave(app);
-    }
-
-    public leaveTeam(team: TeamDto) {
-        this.teamsState.leave(team);
-    }
-
-    public trackByGroup(_index: number, group: GroupedApps) {
-        return group.team?.id || '0';
     }
 }

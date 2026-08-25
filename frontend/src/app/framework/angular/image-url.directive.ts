@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Directive, ElementRef, HostBinding, Input, NgZone, OnInit, Renderer2 } from '@angular/core';
@@ -11,7 +11,7 @@ import { Subscriptions } from '@app/framework/internal';
 @Directive({
     selector: '[sqxImageUrl]',
 })
-export class ImageUrlDirective implements  OnInit {
+export class ImageUrlDirective implements OnInit {
     private readonly subscriptions = new Subscriptions();
 
     @Input('sqxImageUrl') @HostBinding('attr.src')

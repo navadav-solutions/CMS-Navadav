@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { debug, DialogService, shareSubscribed, State, Types } from '@app/framework';
 import { AppsService } from '../internal';
-import { AppDto, AppSettingsDto, CreateAppDto, TransferToTeamDto, UpdateAppDto, UpdateAppSettingsDto } from '../model';
+import { AppDto, AppSettingsDto, CreateAppDto, UpdateAppDto, UpdateAppSettingsDto } from '../model';
 
 interface Snapshot {
     // All apps, loaded once.
@@ -142,13 +142,7 @@ export class AppsState extends State<Snapshot> {
             shareSubscribed(this.dialogs, { silent: true }));
     }
 
-    public transfer(app: AppDto, request: TransferToTeamDto): Observable<AppDto> {
-        return this.appsService.transferApp(app.name, app, request, app.version).pipe(
-            tap(updated => {
-                this.replaceApp(updated);
-            }),
-            shareSubscribed(this.dialogs, { silent: true }));
-    }
+
 
     public updateSettings(settings: AppSettingsDto, request: UpdateAppSettingsDto): Observable<AppSettingsDto> {
         return this.appsService.putSettings(this.appName, settings, request, settings.version).pipe(
@@ -210,8 +204,8 @@ export class AppsState extends State<Snapshot> {
 
             const selectedApp =
                 s.selectedApp?.id !== app.id ?
-                s.selectedApp :
-                null;
+                    s.selectedApp :
+                    null;
 
             return { ...s, apps, selectedApp };
         }, 'Deleted');
@@ -223,8 +217,8 @@ export class AppsState extends State<Snapshot> {
 
             const selectedApp =
                 s.selectedApp?.id !== app.id ?
-                s.selectedApp :
-                app;
+                    s.selectedApp :
+                    app;
 
             return { ...s, apps, selectedApp };
         }, 'Updated');

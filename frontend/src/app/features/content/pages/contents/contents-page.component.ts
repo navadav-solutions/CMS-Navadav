@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable @typescript-eslint/no-unnecessary-boolean-literal-compare */
@@ -208,10 +208,10 @@ export class ContentsPageComponent implements OnInit {
         }
 
         this.dueTimeSelector.selectDueTime(action).pipe(
-                tap(() => {
-                    this.resetSelection();
-                }),
-                switchSafe(d => this.contentsState.changeManyStatus(contents, action, d)))
+            tap(() => {
+                this.resetSelection();
+            }),
+            switchSafe(d => this.contentsState.changeManyStatus(contents, action, d)))
             .subscribe();
     }
 

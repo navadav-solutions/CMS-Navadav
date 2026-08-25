@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -25,7 +25,7 @@ import { AssetFolderDropdownComponent, FieldDto, FormRowComponent, SchemaTagSour
         TranslatePipe,
     ],
 })
-export class StringUIComponent  {
+export class StringUIComponent {
     private readonly subscriptions = new Subscriptions();
 
     public readonly editors = StringFieldEditorValues;

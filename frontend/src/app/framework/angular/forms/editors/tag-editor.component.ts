@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 
@@ -176,35 +176,35 @@ export class TagEditorComponent extends StatefulControlComponent<State, Readonly
     public ngOnInit() {
         this.subscriptions.add(
             this.addInput.valueChanges.pipe(
-                    tap(() => {
-                        this.resetSize();
-                    }),
-                    map(query => {
-                        if (Types.isString(query)) {
-                            return query.trim().toLowerCase();
-                        } else {
-                            return '';
-                        }
-                    }),
-                    tap(query => {
-                        if (!query) {
-                            this.resetAutocompletion();
-                        } else if (!this.latestInput) {
-                            this.dropdownOpen.emit();
-                        }
+                tap(() => {
+                    this.resetSize();
+                }),
+                map(query => {
+                    if (Types.isString(query)) {
+                        return query.trim().toLowerCase();
+                    } else {
+                        return '';
+                    }
+                }),
+                tap(query => {
+                    if (!query) {
+                        this.resetAutocompletion();
+                    } else if (!this.latestInput) {
+                        this.dropdownOpen.emit();
+                    }
 
-                        this.latestInput = query;
-                    }),
-                    distinctUntilChanged(),
-                    map(query => {
-                        if (!query) {
-                            return [];
-                        } else if (Types.isArray(this.itemsSorted)) {
-                            return this.itemsSorted.filter(s => s.lowerCaseName.includes(query) && !this.snapshot.tags.find(x => x.id === s.id));
-                        } else {
-                            return [];
-                        }
-                    }))
+                    this.latestInput = query;
+                }),
+                distinctUntilChanged(),
+                map(query => {
+                    if (!query) {
+                        return [];
+                    } else if (Types.isArray(this.itemsSorted)) {
+                        return this.itemsSorted.filter(s => s.lowerCaseName.includes(query) && !this.snapshot.tags.find(x => x.id === s.id));
+                    } else {
+                        return [];
+                    }
+                }))
                 .subscribe(suggestedItems => {
                     this.next({
                         suggestedIndex: -1,

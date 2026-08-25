@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 
@@ -123,8 +123,8 @@ export class GeolocationEditorComponent extends StatefulControlComponent<State, 
     private updateOSMDisabled(isDisabled: boolean) {
         const update: (t: any) => any =
             isDisabled ?
-            x => x.disable() :
-            x => x.enable();
+                x => x.disable() :
+                x => x.enable();
 
         if (this.map) {
             update(this.map.zoomControl);
@@ -189,22 +189,22 @@ export class GeolocationEditorComponent extends StatefulControlComponent<State, 
         this.map = L.map(this.editor.nativeElement).fitWorld();
 
         L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
-        {
-            attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-        }).addTo(this.map);
+            {
+                attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(this.map);
 
         L.Control.geocoder({
             defaultMarkGeocode: false,
         })
-        .on('markgeocode', (event: any) => {
-            const center = event.geocode.center;
+            .on('markgeocode', (event: any) => {
+                const center = event.geocode.center;
 
-            if (!this.snapshot.isDisabled) {
-                this.updateValue(center.lat, center.lng);
-                this.updateMarker({ reset: true, fire: true });
-            }
-        })
-        .addTo(this.map);
+                if (!this.snapshot.isDisabled) {
+                    this.updateValue(center.lat, center.lng);
+                    this.updateMarker({ reset: true, fire: true });
+                }
+            })
+            .addTo(this.map);
 
         this.map.on('click', (event: any) => {
             if (!this.snapshot.isDisabled) {

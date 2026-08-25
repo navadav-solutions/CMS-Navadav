@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AbstractControl, ValidatorFn } from '@angular/forms';
@@ -177,7 +177,7 @@ export type FormGlobals = Readonly<{
     partitions: PartitionConfig;
     remoteValidator?: ValidatorFn;
     schema: SchemaDto;
-    schemas: { [id: string ]: SchemaDto };
+    schemas: { [id: string]: SchemaDto };
 }>;
 
 export type ControlArgs<T = AnyFieldDto> = Readonly<{
@@ -272,7 +272,7 @@ export abstract class AbstractContentForm<T extends AnyFieldDto, TForm extends A
         this.updateCustomState(context, itemData, state);
     }
 
-    protected updateCustomState(_context: RuleContext, _itemData: any, _state: AbstractContentFormState): void {}
+    protected updateCustomState(_context: RuleContext, _itemData: any, _state: AbstractContentFormState): void { }
 }
 
 const SELF = { onlySelf: true };

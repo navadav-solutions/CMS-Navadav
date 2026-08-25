@@ -1,15 +1,15 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
-export class HistoryChannelUpdated {}
+export class HistoryChannelUpdated { }
 
-export class QueryExecuted {}
+export class QueryExecuted { }
 
-export class ClientTourStated {}
+export class ClientTourStated { }
 
 export class AnnotationCreate {
     constructor(

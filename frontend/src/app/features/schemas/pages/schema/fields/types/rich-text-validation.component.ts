@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Component, Input } from '@angular/core';
@@ -20,7 +20,7 @@ import { FieldDto, FormRowComponent, RichTextFieldPropertiesDto, TranslatePipe }
         TranslatePipe,
     ],
 })
-export class RichTextValidationComponent  {
+export class RichTextValidationComponent {
     @Input({ required: true })
     public fieldForm!: UntypedFormGroup;
 

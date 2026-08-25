@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable } from '@angular/core';
@@ -140,8 +140,8 @@ export interface WorkflowStepView {
     // The actual step.
     values: WorkflowStepValues;
 
-     // True, if the step cannot be removed.
-     isLocked?: boolean;
+    // True, if the step cannot be removed.
+    isLocked?: boolean;
 }
 
 export type WorkflowStepValues = Omit<IWorkflowStepDto, 'transitions'>;

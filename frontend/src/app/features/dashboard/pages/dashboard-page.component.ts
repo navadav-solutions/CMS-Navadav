@@ -1,17 +1,15 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
 import { AfterViewInit, Component, NgZone, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Gridster, GridsterConfig, GridsterItem, GridsterItemConfig, GridType } from 'angular-gridster2';
-import { ApiCallsCardComponent, ApiCallsSummaryCardComponent, ApiPerformanceCardComponent, ApiTrafficCardComponent, ApiTrafficSummaryCardComponent, AppsState, AssetUploadsCountCardComponent, AssetUploadsSizeCardComponent, AssetUploadsSizeSummaryCardComponent, AuthService, CallsUsageDto, CurrentStorageDto, DateTime, defined, IFrameCardComponent, LocalStoreService, MarkdownDirective, RandomCatCardComponent, RandomDogCardComponent, Settings, StorageUsagePerDateDto, Subscriptions, SupportCardComponent, switchSafe, TitleComponent, TourStepDirective, TranslatePipe, UsagesService } from '@app/shared';
-import { ApiCardComponent } from './cards/api-card.component';
+import { ApiCallsCardComponent, ApiCallsSummaryCardComponent, ApiPerformanceCardComponent, ApiTrafficCardComponent, ApiTrafficSummaryCardComponent, AppsState, AssetUploadsCountCardComponent, AssetUploadsSizeCardComponent, AssetUploadsSizeSummaryCardComponent, AuthService, CallsUsageDto, CurrentStorageDto, DateTime, defined, IFrameCardComponent, LocalStoreService, MarkdownDirective, RandomCatCardComponent, RandomDogCardComponent, Settings, StorageUsagePerDateDto, Subscriptions, switchSafe, TitleComponent, TourStepDirective, TranslatePipe, UsagesService } from '@app/shared';
 import { ContentSummaryCardComponent } from './cards/content-summary-card.component';
-import { GithubCardComponent } from './cards/github-card.component';
 import { HistoryCardComponent } from './cards/history-card.component';
 import { SchemaCardComponent } from './cards/schema-card.component';
 import { DashboardConfigComponent } from './dashboard-config.component';
@@ -23,7 +21,6 @@ import { DashboardConfigComponent } from './dashboard-config.component';
     imports: [
         ApiCallsCardComponent,
         ApiCallsSummaryCardComponent,
-        ApiCardComponent,
         ApiPerformanceCardComponent,
         ApiTrafficCardComponent,
         ApiTrafficSummaryCardComponent,
@@ -33,7 +30,6 @@ import { DashboardConfigComponent } from './dashboard-config.component';
         AsyncPipe,
         ContentSummaryCardComponent,
         DashboardConfigComponent,
-        GithubCardComponent,
         Gridster,
         GridsterItem,
         HistoryCardComponent,
@@ -42,7 +38,6 @@ import { DashboardConfigComponent } from './dashboard-config.component';
         RandomCatCardComponent,
         RandomDogCardComponent,
         SchemaCardComponent,
-        SupportCardComponent,
         TitleComponent,
         TourStepDirective,
         TranslatePipe,

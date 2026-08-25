@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Directive, HostListener, Input, Renderer2 } from '@angular/core';
@@ -68,7 +68,7 @@ export class CopyDirective {
             this.dialogs.notifyInfo('i18n:common.clipboardAdded');
 
             return true;
-        } catch  {
+        } catch {
             return false;
         }
     }

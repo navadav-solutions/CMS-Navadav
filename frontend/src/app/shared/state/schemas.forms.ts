@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AbstractControl, UntypedFormControl, Validators } from '@angular/forms';
@@ -461,8 +461,8 @@ export class AddFieldForm extends Form<ExtendedFormGroup, AddFieldDto, Partial<A
 
         const type =
             properties ?
-            properties.fieldType :
-            'String';
+                properties.fieldType :
+                'String';
 
         return { name, isLocalizable, type };
     }

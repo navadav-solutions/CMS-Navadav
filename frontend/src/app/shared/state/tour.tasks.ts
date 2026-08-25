@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { inject, InjectionToken } from '@angular/core';
@@ -44,7 +44,7 @@ export interface TaskDefinition {
 }
 
 export function buildTasks() {
-   const tasks: TaskDefinition[] = [{
+    const tasks: TaskDefinition[] = [{
         id: 'createApp',
         title: 'i18n:tour.createApp.title',
         description: 'i18n:tour.createApp.description',

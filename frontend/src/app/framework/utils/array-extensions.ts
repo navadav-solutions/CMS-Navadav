@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 /* eslint-disable */
@@ -53,7 +53,7 @@ interface Array<T> {
     toMap(selector: (value: T) => string): { [key: string]: T };
 }
 
-Array.prototype.replaceBy = function<T>(field: keyof T, value: T) {
+Array.prototype.replaceBy = function <T>(field: keyof T, value: T) {
     const self: T[] = this;
 
     if (!field || !value) {
@@ -72,7 +72,7 @@ Array.prototype.replaceBy = function<T>(field: keyof T, value: T) {
     return self;
 };
 
-Array.prototype.replacedBy = function<T>(field: keyof T, value: T) {
+Array.prototype.replacedBy = function <T>(field: keyof T, value: T) {
     const self: ReadonlyArray<T> = this;
 
     if (!field || !value) {
@@ -93,7 +93,7 @@ Array.prototype.replacedBy = function<T>(field: keyof T, value: T) {
     return copy;
 };
 
-Array.prototype.clear = function<T>() {
+Array.prototype.clear = function <T>() {
     const self: T[] = this;
 
     self.splice(0, self.length);
@@ -101,7 +101,7 @@ Array.prototype.clear = function<T>() {
     return self;
 };
 
-Array.prototype.removeBy = function<T>(field: keyof T, value: T) {
+Array.prototype.removeBy = function <T>(field: keyof T, value: T) {
     const self: T[] = this;
 
     if (!field || !value) {
@@ -113,7 +113,7 @@ Array.prototype.removeBy = function<T>(field: keyof T, value: T) {
     return self;
 };
 
-Array.prototype.removed = function<T>(value?: T) {
+Array.prototype.removed = function <T>(value?: T) {
     const self: ReadonlyArray<T> = this;
 
     if (!value) {
@@ -123,7 +123,7 @@ Array.prototype.removed = function<T>(value?: T) {
     return self.filter((v: T) => v !== value);
 };
 
-Array.prototype.remove = function<T>(value?: T) {
+Array.prototype.remove = function <T>(value?: T) {
     const self: T[] = this;
 
     if (!value) {
@@ -137,7 +137,7 @@ Array.prototype.remove = function<T>(value?: T) {
     return self;
 };
 
-Array.prototype.removedBy = function<T>(field: keyof T, value: T) {
+Array.prototype.removedBy = function <T>(field: keyof T, value: T) {
     const self: ReadonlyArray<T> = this;
 
     if (!field || !value) {
@@ -147,7 +147,7 @@ Array.prototype.removedBy = function<T>(field: keyof T, value: T) {
     return self.filter((v: T) => v[field] !== value[field]);
 };
 
-Array.prototype.sorted = function() {
+Array.prototype.sorted = function () {
     const self: any[] = this;
 
     const copy = [...self];
@@ -157,19 +157,19 @@ Array.prototype.sorted = function() {
     return copy;
 };
 
-Array.prototype.defined = function() {
+Array.prototype.defined = function () {
     const self: any[] = this;
 
     return self.filter(x => !!x);
 }
 
-Array.prototype.includes = function<T>(value: T) {
+Array.prototype.includes = function <T>(value: T) {
     const self: any[] = this;
 
     return self.indexOf(value) >= 0;
 }
 
-Array.prototype.sortedByString = function<T>(selector: (value: T) => string) {
+Array.prototype.sortedByString = function <T>(selector: (value: T) => string) {
     const self: ReadonlyArray<any> = this;
 
     if (!selector) {
@@ -183,7 +183,7 @@ Array.prototype.sortedByString = function<T>(selector: (value: T) => string) {
     return copy;
 };
 
-Array.prototype.sortByString = function<T>(selector: (value: T) => string) {
+Array.prototype.sortByString = function <T>(selector: (value: T) => string) {
     const self: any[] = this;
 
     if (!selector) {
@@ -195,7 +195,7 @@ Array.prototype.sortByString = function<T>(selector: (value: T) => string) {
     return self;
 };
 
-Array.prototype.toMap = function<T>(selector: (value: T) => string) {
+Array.prototype.toMap = function <T>(selector: (value: T) => string) {
     const result: { [key: string]: T } = {};
 
     for (const item of this) {

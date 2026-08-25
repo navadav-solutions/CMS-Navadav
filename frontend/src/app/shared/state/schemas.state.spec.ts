@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { firstValueFrom, of, onErrorResumeNextWith, throwError } from 'rxjs';
@@ -686,14 +686,14 @@ describe('SchemasState', () => {
                     countSchemasInSubtree: 2,
                     countSchemasInSubtreeFiltered: 2,
                     categories: [{
-                            displayName: 'B',
-                            name: 'A/B',
-                            schemas: [schemaAB],
-                            schemasFiltered: [schemaAB],
-                            countSchemasInSubtree: 1,
-                            countSchemasInSubtreeFiltered: 1,
-                            categories: [],
-                        }],
+                        displayName: 'B',
+                        name: 'A/B',
+                        schemas: [schemaAB],
+                        schemasFiltered: [schemaAB],
+                        countSchemasInSubtree: 1,
+                        countSchemasInSubtreeFiltered: 1,
+                        categories: [],
+                    }],
                 }, {
                     displayName: 'schema-category1',
                     name: 'schema-category1',
@@ -740,14 +740,14 @@ describe('SchemasState', () => {
                     countSchemasInSubtree: 0,
                     countSchemasInSubtreeFiltered: 0,
                     categories: [{
-                            displayName: 'B',
-                            name: 'A/B',
-                            schemas: [],
-                            schemasFiltered: [],
-                            countSchemasInSubtree: 0,
-                            countSchemasInSubtreeFiltered: 0,
-                            categories: [],
-                        }],
+                        displayName: 'B',
+                        name: 'A/B',
+                        schemas: [],
+                        schemasFiltered: [],
+                        countSchemasInSubtree: 0,
+                        countSchemasInSubtreeFiltered: 0,
+                        categories: [],
+                    }],
                 }, {
                     displayName: 'schema-category1',
                     name: 'schema-category1',
@@ -802,14 +802,14 @@ describe('SchemasState', () => {
                 countSchemasInSubtree: 2,
                 countSchemasInSubtreeFiltered: 1,
                 categories: [{
-                        displayName: 'B',
-                        name: 'A/B',
-                        schemas: [schemaAB],
-                        schemasFiltered: [schemaAB],
-                        countSchemasInSubtree: 1,
-                        countSchemasInSubtreeFiltered: 1,
-                        categories: [],
-                    }],
+                    displayName: 'B',
+                    name: 'A/B',
+                    schemas: [schemaAB],
+                    schemasFiltered: [schemaAB],
+                    countSchemasInSubtree: 1,
+                    countSchemasInSubtreeFiltered: 1,
+                    categories: [],
+                }],
             }, {
                 displayName: 'schema-category1',
                 name: 'schema-category1',

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -27,7 +27,7 @@ export class ContentsFiltersPageComponent {
         this.schemasState.selectedSchema.pipe(
             defined(),
             map(schema => new Queries(this.uiState, `schemas.${schema.name}`),
-        ));
+            ));
 
     constructor(
         public readonly contentsState: ContentsState,

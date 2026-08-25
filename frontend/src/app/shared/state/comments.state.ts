@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
@@ -72,7 +72,7 @@ export class CommentsState implements OnDestroy {
 
     constructor(
         collaboration: CollaborationService,
-    )  {
+    ) {
         this.subscription =
             collaboration.getArray<Comment>('stream')
                 .subscribe(comments => {

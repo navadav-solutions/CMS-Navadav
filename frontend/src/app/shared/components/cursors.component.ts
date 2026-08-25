@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -23,7 +23,7 @@ type CursorState = { user: Profile; cursor: { x: number; y: number } };
         StringColorPipe,
     ],
 })
-export class CursorsComponent  {
+export class CursorsComponent {
     public otherCursor =
         this.collaboration.userChanges
             .pipe(map(x => x.filter(s => !!s['cursor']) as CursorState[]));

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { Types } from './utils/types';
 
 export type Mutable<T> = {
-    -readonly [P in keyof T ]: T[P];
+    -readonly [P in keyof T]: T[P];
 };
 
 export class Model<T> {

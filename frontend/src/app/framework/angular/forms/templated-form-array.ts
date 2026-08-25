@@ -1,8 +1,8 @@
 /*
-* Squidex Headless CMS
+* Navadav Headless CMS
 *
 * @license
-* Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+* Copyright (c) NAVADAV. Todos los derechos reservados.
 */
 
 import { AbstractControl, AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from '@angular/forms';
@@ -12,7 +12,7 @@ import { UndefinableFormArray } from './extended-form-array';
 export interface FormArrayTemplate {
     createControl(value: any, initialValue?: any): AbstractControl;
 
-    removeControl?(index: number, control: AbstractControl) : void;
+    removeControl?(index: number, control: AbstractControl): void;
 
     clearControls?(): void;
 }

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
@@ -94,7 +94,7 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public get desiredInnerWidth() {
         if (this.innerWidth > 0) {
-          return `${this.innerWidth}rem`;
+            return `${this.innerWidth}rem`;
         }
 
         return '100%';
@@ -187,7 +187,7 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public measure(size: string) {
-        if (!this.isViewInitField || this.widthPrevious === size)  {
+        if (!this.isViewInitField || this.widthPrevious === size) {
             return;
         }
 

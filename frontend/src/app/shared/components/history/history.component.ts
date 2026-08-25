@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { merge, Observable, timer } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { LayoutComponent } from '@app/framework';
-import { allParams, AppsState, HistoryChannelUpdated, HistoryEventDto, HistoryService, MessageBus, SchemasState, switchSafe, TeamsState } from '@app/shared/internal';
+import { allParams, AppsState, HistoryChannelUpdated, HistoryEventDto, HistoryService, MessageBus, SchemasState, switchSafe } from '@app/shared/internal';
 import { HistoryListComponent } from './history-list.component';
 
 @Component({
@@ -41,16 +41,11 @@ export class HistoryComponent {
         private readonly messageBus: MessageBus,
         private readonly route: ActivatedRoute,
         private readonly schemasState: SchemasState,
-        private readonly teamsState: TeamsState,
     ) {
     }
 
     private getHistory() {
-        if (this.teamsState.teamId) {
-            return this.historyService.getHistoryForTeam(this.teamsState.teamId, this.channel);
-        } else {
-            return this.historyService.getHistory(this.appsState.appName, this.channel);
-        }
+        return this.historyService.getHistory(this.appsState.appName, this.channel);
     }
 
     private calculateChannel(): string {

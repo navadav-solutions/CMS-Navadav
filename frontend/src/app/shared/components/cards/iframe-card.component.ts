@@ -1,13 +1,13 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { ApiUrlConfig, Types } from '@app/framework';
-import { AppDto, AuthService, TeamDto } from '@app/shared/internal';
+import { AppDto, AuthService } from '@app/shared/internal';
 
 @Component({
     selector: 'sqx-iframe-card',
@@ -25,13 +25,7 @@ export class IFrameCardComponent implements AfterViewInit {
     @ViewChild('iframe', { static: false })
     public iframe!: ElementRef<HTMLIFrameElement>;
 
-    @Input()
-    public set team(value: TeamDto | undefined | null) {
-        if (value) {
-            this.context.teamId = value.id;
-            this.context.teamName = value.name;
-        }
-    }
+
 
     @Input()
     public set app(value: AppDto | undefined | null) {

@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
@@ -118,7 +118,7 @@ const DEFINITION = new DynamicFlowDefinitionDto({
                 httpBody: JSON.stringify({ request: 'Hello World' }, undefined, 2),
                 headers: 'Header1: Value1\nHeader2: Value2',
                 retries: 2,
-             },
+            },
             nextStepId: null!,
         }),
     },

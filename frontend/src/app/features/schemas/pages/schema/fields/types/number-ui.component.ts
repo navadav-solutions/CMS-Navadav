@@ -1,8 +1,8 @@
 /*
- * Squidex Headless CMS
+ * Navadav Headless CMS
  *
  * @license
- * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
+ * Copyright (c) NAVADAV. Todos los derechos reservados.
  */
 
 import { AsyncPipe } from '@angular/common';
@@ -23,7 +23,7 @@ import { FieldDto, FloatConverter, FormRowComponent, NumberFieldEditorValues, Nu
         TagEditorComponent,
     ],
 })
-export class NumberUIComponent  {
+export class NumberUIComponent {
     private readonly subscriptions = new Subscriptions();
 
     public readonly converter = FloatConverter.INSTANCE;
