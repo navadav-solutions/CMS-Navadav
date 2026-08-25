@@ -9,7 +9,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { ApiUrlConfig, AppDto, AppSettingsDto, AppsService, AssetScriptsDto, DateTime, EditorDto, ErrorDto, PatternDto, Resource, Versioned, VersionTag } from '@app/shared/internal';
-import { CreateAppDto, ResourceLinkDto, TransferToTeamDto, UpdateAppDto, UpdateAppSettingsDto, UpdateAssetScriptsDto } from '../model';
+import { CreateAppDto, ResourceLinkDto, UpdateAppDto, UpdateAppSettingsDto, UpdateAssetScriptsDto } from '../model';
 
 describe('AppsService', () => {
     const version = new VersionTag('1');
@@ -49,25 +49,6 @@ describe('AppsService', () => {
         expect(apps!).toEqual([createApp(12), createApp(13)]);
     }));
 
-
-    it('should make get request to get team apps', inject([AppsService, HttpTestingController], (appsService: AppsService, httpMock: HttpTestingController) => {
-        let apps: ReadonlyArray<AppDto>;
-        appsService.getTeamApps('my-team').subscribe(result => {
-            apps = result;
-        });
-
-        const req = httpMock.expectOne('http://service/p/api/teams/my-team/apps');
-
-        expect(req.request.method).toEqual('GET');
-        expect(req.request.headers.get('If-Match')).toBeNull();
-
-        req.flush([
-            appResponse(12),
-            appResponse(13),
-        ]);
-
-        expect(apps!).toEqual([createApp(12), createApp(13)]);
-    }));
 
     it('should make get request to get app', inject([AppsService, HttpTestingController], (appsService: AppsService, httpMock: HttpTestingController) => {
         let app: AppDto;
@@ -206,30 +187,6 @@ describe('AppsService', () => {
         });
 
         const req = httpMock.expectOne('http://service/p/api/apps/my-app');
-
-        expect(req.request.method).toEqual('PUT');
-        expect(req.request.headers.get('If-Match')).toBe(version.value);
-
-        req.flush(appResponse(12));
-
-        expect(app!).toEqual(createApp(12));
-    }));
-
-    it('should make put request to transfer app', inject([AppsService, HttpTestingController], (appsService: AppsService, httpMock: HttpTestingController) => {
-        const dto = new TransferToTeamDto({ teamId: 'my-team' });
-
-        const resource: Resource = {
-            _links: {
-                transfer: { method: 'PUT', href: '/api/apps/my-app/team' },
-            },
-        };
-
-        let app: AppDto;
-        appsService.transferApp('my-app', resource, dto, version).subscribe(result => {
-            app = result;
-        });
-
-        const req = httpMock.expectOne('http://service/p/api/apps/my-app/team');
 
         expect(req.request.method).toEqual('PUT');
         expect(req.request.headers.get('If-Match')).toBe(version.value);
