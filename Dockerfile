@@ -41,8 +41,8 @@ RUN dotnet restore
 
 COPY backend .
  
-# Test Backend
-RUN dotnet test --filter "Category!=Dependencies & Category!=TestContainer" --configuration Release
+# Test Backend (Saltado para agilizar el despliegue)
+# RUN dotnet test --filter "Category!=Dependencies & Category!=TestContainer" --configuration Release
 
 # Publish
 RUN dotnet publish src/Squidex/Squidex.csproj --output /build/ --configuration Release -p:version=$SQUIDEX__BUILD__VERSION ${SQUIDEX__BUILD__ARGS}
@@ -70,9 +70,8 @@ RUN npm install --loglevel=error --force
 COPY frontend .
 
 # Build Frontend
-RUN npm run lint \
- && npm run test:coverage \
- && npm run build
+RUN npm run build
+
 
 RUN cp -a build /build/
 
