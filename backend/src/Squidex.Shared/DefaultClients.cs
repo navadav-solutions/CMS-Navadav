@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 //  Squidex Headless CMS
 // ==========================================================================
 //  Copyright (c) Squidex UG (haftungsbeschraenkt)
@@ -9,5 +9,5 @@ namespace Squidex.Shared;
 
 public static class DefaultClients
 {
-    public const string Frontend = "squidex-frontend";
+    public const string Frontend = "navadav-frontend";
 }

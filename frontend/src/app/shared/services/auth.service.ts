@@ -20,15 +20,15 @@ export class Profile {
     }
 
     public get displayName() {
-        return this.user.profile['urn:squidex:name'] as string;
+        return this.user.profile['urn:navadav:name'] as string;
     }
 
     public get pictureUrl() {
-        return this.user.profile['urn:squidex:picture'];
+        return this.user.profile['urn:navadav:picture'];
     }
 
     public get notifoToken(): string | undefined {
-        return this.user.profile['urn:squidex:notifo'] as string | undefined;
+        return this.user.profile['urn:navadav:notifo'] as string | undefined;
     }
 
     public get isExpired() {
@@ -98,8 +98,8 @@ export class AuthService {
         Log.setLogger(console);
 
         this.userManager = new UserManager({
-            client_id: 'squidex-frontend',
-            scope: 'squidex-api openid profile email permissions',
+            client_id: 'navadav-frontend',
+            scope: 'navadav-api openid profile email permissions',
             redirect_uri: apiUrl.buildUrl('login;'),
             post_logout_redirect_uri: apiUrl.buildUrl('logout'),
             silent_redirect_uri: apiUrl.buildUrl('client-callback-silent.html'),
