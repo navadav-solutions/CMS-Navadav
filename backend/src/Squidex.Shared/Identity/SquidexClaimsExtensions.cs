@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 //  Squidex Headless CMS
 // ==========================================================================
 //  Copyright (c) Squidex UG (haftungsbeschraenkt)
@@ -109,7 +109,7 @@ public static partial class SquidexClaimsExtensions
 
     public static IEnumerable<Claim> GetSquidexClaims(this IEnumerable<Claim> user)
     {
-        const string prefix = "urn:squidex:";
+        const string prefix = "urn:navadav:";
 
         foreach (var claim in user)
         {

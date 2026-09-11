@@ -14,7 +14,8 @@ class HelpRenderer extends Renderer {
     public link({ href, tokens }: Tokens.Link): string {
         const text = this.parser.parseInline(tokens);
         if (href && !href.startsWith('http')) {
-            href = `https://docs.squidex.io/${href}`;
+            // Links relativos en la ayuda se dejan sin resolver (documentación interna pendiente)
+            return `<span>${text}</span>`;
         }
 
         return `<a href="${href}" target="_blank", rel="noopener">${text} <i class="icon-external-link"></i></a>`;

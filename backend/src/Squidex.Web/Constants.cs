@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 //  Squidex Headless CMS
 // ==========================================================================
 //  Copyright (c) Squidex UG (haftungsbeschraenkt)
@@ -12,7 +12,7 @@ namespace Squidex.Web;
 
 public static class Constants
 {
-    public const string SecurityDefinition = "squidex-oauth-auth";
+    public const string SecurityDefinition = "navadav-oauth-auth";
 
     public const string ApiSecurityScheme = "API";
 
@@ -26,11 +26,11 @@ public static class Constants
 
     public const string ScopePermissions = "permissions";
 
-    public const string ScopeProfile = "squidex-profile";
+    public const string ScopeProfile = "navadav-profile";
 
     public const string ScopeRole = "role";
 
-    public const string ScopeApi = "squidex-api";
+    public const string ScopeApi = "navadav-api";
 
     public const string ClaimTypeApp = "app/name";
 
@@ -38,7 +38,7 @@ public static class Constants
 
     public static readonly string ClientFrontendId = DefaultClients.Frontend;
 
-    public static readonly string ClientInternalId = "squidex-internal";
+    public static readonly string ClientInternalId = "navadav-internal";
 
-    public static readonly string ClientInternalSecret = "squidex-internal".ToSha256Base64();
+    public static readonly string ClientInternalSecret = "navadav-internal".ToSha256Base64();
 }

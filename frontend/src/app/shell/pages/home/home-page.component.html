@@ -3,23 +3,24 @@
         <div class="card-body text-center">
             <img class="login-icon login-element" alt="Logo" src="./images/logo.svg" />
             <div>
-                <button class="btn btn-success btn-lg login-button login-element" (click)="login()" data-testid="login" type="button">
+                <button class="btn btn-success btn-lg login-button login-element" (click)="login()" data-testid="login"
+                    type="button">
                     {{ "start.login" | sqxTranslate }}
                 </button>
             </div>
 
             @if (!isInternetExplorer()) {
-                <div class="login-info login-element">{{ "start.loginHint" | sqxTranslate }}</div>
+            <div class="login-info login-element">{{ "start.loginHint" | sqxTranslate }}</div>
             }
         </div>
-
-        <div class="login-arms"></div>
     </div>
 
     <div class="proudly-made text-center mt-4 mb-4">
         <sqx-form-hint>
-            {{ "start.madeBy" | sqxTranslate }}<br />
-            {{ "start.madeByCopyright" | sqxTranslate }}
+            <a href="https://www.navadav.com" target="_blank" rel="noopener noreferrer">
+                {{ "start.madeBy" | sqxTranslate }}<br />
+                {{ "start.madeByCopyright" | sqxTranslate }}
+            </a>
         </sqx-form-hint>
     </div>
 </div>

@@ -190,7 +190,7 @@ class Connector {
             return;
         }
 
-        this.devTools = devToolsExtension.connect({ name: 'Squidex' });
+        this.devTools = devToolsExtension.connect({ name: 'Navadav CMS' });
         this.devTools.init(this.state);
     }
 
