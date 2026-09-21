@@ -26,6 +26,7 @@ jobs:
         env:
           DOCKER_BUILD_RECORD_UPLOAD: false
         with:
+          context: .
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -264,6 +265,7 @@ jobs:
         env:
           DOCKER_BUILD_RECORD_UPLOAD: false
         with:
+          context: .
           push: true
           build-args: "SQUIDEX__RUNTIME__VERSION=7.0.0-dev-${{ env.BUILD_NUMBER }}"
           cache-from: type=gha

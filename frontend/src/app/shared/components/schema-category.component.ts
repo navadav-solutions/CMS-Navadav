@@ -112,6 +112,6 @@ export class SchemaCategoryComponent {
     }
 
     private isCollapsedKey(): string {
-        return `squidex.schema.category.${this.schemaCategory.name}.collapsed`;
+        return `navadav.schema.category.${this.schemaCategory.name}.collapsed`;
     }
 }
