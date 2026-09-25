@@ -322,7 +322,7 @@
   "setup.headline": "Installation",
   "setup.hint": "Sie sehen diesen Bildschirm, weil noch kein Benutzer existiert. Nachdem ein Benutzer erstellt wurde, können Sie diese Einrichtungsseite nicht erneut verwenden.",
   "setup.madeBy": "Stolz gemacht von",
-  "setup.madeByCopyright": "Sebastian Stehle and Contributors, 2016-2024",
+  "setup.madeByCopyright": "NAVADAV",
   "setup.ruleAppCreation.warningAdmins": "Mit Ihrer Einrichtung können nur Admins neue Apps erstellen. Wenn Sie dies ändern möchten, setzen Sie `UI__ONLYADMINSCANCREATEAPPS=false` als Umgebungsvariable.",
   "setup.ruleAppCreation.warningAll": "Mit Ihrer Einrichtung kann jeder Benutzer neue Apps erstellen. Wenn Sie dies ändern möchten, setzen Sie `UI__ONLYADMINSCANCREATEAPPS=true` als Umgebungsvariable.",
   "setup.ruleFolder.warning": "Sie verwenden den <strong>Ordner-Asset-Speicher</strong>, in dem alle Assets im Dateisystem gespeichert werden. Bitte denken Sie daran, den Asset-Ordner in Ihre Backup-Strategie aufzunehmen und ihn einem Volume zuzuordnen, wenn Sie Docker verwenden.",
