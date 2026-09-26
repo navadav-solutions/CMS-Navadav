@@ -4,10 +4,6 @@
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:10.0 AS backend
 
-# FFMPEG for tests
-RUN apt-get update \
- && apt-get install -y ffmpeg
-
 ARG SQUIDEX__BUILD__VERSION=7.0.0
 ARG SQUIDEX__BUILD__ARGS
 
@@ -40,12 +36,9 @@ RUN for file in $(ls *.csproj); \
 RUN dotnet restore
 
 COPY backend .
- 
-# Test Backend (Saltado para agilizar el despliegue)
-# RUN dotnet test --filter "Category!=Dependencies & Category!=TestContainer" --configuration Release
 
-# Publish
-RUN dotnet publish src/Squidex/Squidex.csproj --output /build/ --configuration Release -p:version=$SQUIDEX__BUILD__VERSION ${SQUIDEX__BUILD__ARGS}
+# Publish (sin ejecutar tests y silenciando advertencias)
+RUN dotnet publish src/Squidex/Squidex.csproj --output /build/ --configuration Release --no-restore --nologo -v q -p:version=$SQUIDEX__BUILD__VERSION ${SQUIDEX__BUILD__ARGS}
 
 # Install tools
 RUN dotnet tool install --tool-path /tools dotnet-dump \
@@ -65,7 +58,7 @@ ENV CONTINUOUS_INTEGRATION=1
 COPY frontend/package*.json ./
 
 # Install Node packages 
-RUN npm install --loglevel=error --force
+RUN npm install --loglevel=error --force --no-audit --no-fund
 
 COPY frontend .
 

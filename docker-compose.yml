@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   navadav_cms_app:
     image: navadav_cms
